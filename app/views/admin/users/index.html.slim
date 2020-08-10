@@ -1,0 +1,11 @@
+- content_for :bread_crumb do
+  h6.text-light.breadcrumb-nav
+    = link_to  "Home ", admin_users_path
+    '/
+    span.active = link_to  "Users", admin_users_path
+
+.main-body
+    .main-body__filter-bar
+	    == render 'filters'
+	.main-body__table-container
+		== render 'table'

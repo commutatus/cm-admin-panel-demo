@@ -1,0 +1,16 @@
+.auth
+  .auth__form-inner
+    .header-log
+      = image_tag('cm.png', alt: 'logo image')
+    h2.header-title LOG IN
+    .field-100
+      .field-100__item
+        input type="text" placeholder="Username"
+    .field-100
+      .field-100__item
+        input type="text" placeholder="Password"
+    .forgot-password
+      a href="/reset_password"  Forgot your password?
+    .field-100
+      button.btn.btn-primary.get-start-btn type="button"  Log in
+
