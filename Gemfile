@@ -55,7 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'slim'
 # gem 'cm-admin', path: '/Users/barath/com/rails/cm-admin'
-# gem 'spotlight_search'
+gem 'spotlight_search'
 gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'simple_form'
