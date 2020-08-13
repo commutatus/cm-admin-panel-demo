@@ -6,7 +6,7 @@
   left: 0;
   width: 250px;
   height: 100%;
-  background-color: $elephant-black;
+  background-color: $secondary-clr;
   overflow: hidden;
   z-index: 1;
 
@@ -16,7 +16,7 @@
     align-items: center;
     height: 60px;
     padding: 8px;
-    background-color: $active-bg;
+    background-color: $black;
     img {
       width: 100%;
       object-fit: cover;
@@ -31,7 +31,7 @@
     .tab-link {
       padding: 0;
       text-decoration: none;
-      color: $nav-text-color;
+      color: $white;
       cursor: pointer;
       .tab-item {
         position: relative;
@@ -42,11 +42,11 @@
           background-color: #4b4b4b;
         }
         &.active {
-          background-color: $active-bg;
-          border-left: 4px solid #0099ff;
+          background-color: $black;
+          border-left: 4px solid $primary-clr;
         }
         .tab-name {
-          color: $nav-text-color;
+          color: $white;
         }
       }
     }
@@ -62,7 +62,7 @@
       padding: 10px 0;
       transition: all 0.2s linear;
       &:hover {
-        background-color: #000000;
+        background-color: $black;
       }
     }
   }
