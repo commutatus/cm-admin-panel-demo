@@ -1,19 +1,16 @@
-@import "_variable.scss";
+@import "variable";
+@import "mixins";
 
 //filter-styles-starts-here
 .filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  @include flex(row, space-between, flex-start, nowrap);
   width: 100%;
   height: 100%;
   @media screen and (max-width: 1280px) {
     flex-wrap: wrap;
   }
   &__lhs {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    @include flex(row, flex-start, center, wrap);
     width: 75%;
     .filter-field {
       position: relative;
