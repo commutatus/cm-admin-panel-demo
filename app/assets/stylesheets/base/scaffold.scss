@@ -1,5 +1,4 @@
-@import "variable";
-@import "mixins";
+@import "../helpers/index.scss";
 
 //main-layout-styles
 .admin-panel {
@@ -12,10 +11,15 @@
   .main {
     width: calc(100% - 250px);
     margin-left: 250px;
-    background-color: $main-background;
+    background-color: $white;
     overflow-y: auto;
     overflow-x: hidden;
   }
+}
+
+.components {
+  margin-top: 5rem;
+  padding: 10px 30px;
 }
 
 //custom-styles

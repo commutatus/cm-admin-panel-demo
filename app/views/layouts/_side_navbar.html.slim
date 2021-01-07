@@ -10,6 +10,10 @@
             span.p-4.tab-name.f14 Users
         .tab-item 
             span.p-4.tab-name.f14 Admin
+    
+      = link_to '/components', class: 'tab-link'
+        .tab-item class="#{(controller_name == 'components') ? 'active' : ''}"
+            span.p-4.tab-name.f14 Components
 
 
     .sidebar-menu__footer

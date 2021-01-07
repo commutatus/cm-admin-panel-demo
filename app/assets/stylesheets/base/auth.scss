@@ -1,5 +1,4 @@
-@import "variable";
-@import "mixins";
+@import '../helpers/index.scss';
 
 .auth {
   display: flex;
