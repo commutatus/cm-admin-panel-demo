@@ -20,6 +20,9 @@
 .components {
   margin-top: 5rem;
   padding: 10px 30px;
+  .field-container {
+    max-width: 400px;
+  }
 }
 
 //custom-styles

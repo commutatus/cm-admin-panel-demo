@@ -1,5 +1,6 @@
 .components
-  div.buttons-section
+  .mb-3
+    h3 Buttons
     button.cta-btn type="button" 
       | Call to action
     button.cta-btn.disabled.ml-2 type="button" 
@@ -26,3 +27,49 @@
       | Ghost
     button.ghost-btn.disabled.ml-2 type="button" 
       | Ghost
+
+  .field-container.mb-3
+    h3 Input field
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+        p.field-helper-text Helper text
+      .field-input-wrapper
+        input.search-input type="text" placeholder="Placeholder"
+        span.search-input-icon
+          i.fa.fa-search
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+      .field-input-wrapper
+        input.normal-input type="text" placeholder="Placeholder"
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+          span 
+            | (Required)
+      .field-input-wrapper
+        input.normal-input type="text" placeholder="Placeholder"
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+      .field-input-wrapper
+        input.normal-input.error type="text" placeholder="Placeholder"
+        p.error-msg
+          span
+            i.fa.fa-exclamation-circle
+          | Error message
+    
+    .mb-3
+      h3 Checkbox
+      input.cm-checkbox type="checkbox"
+      input.cm-checkbox.disabled.ml-3 type="checkbox"
+
+    .mb-3
+      h3 Radio
+      input.cm-radio type="radio"
+      input.cm-radio.disabled.ml-3 type="radio" 
