@@ -53,7 +53,6 @@
   }
 }
 
-
 .secondary-btn {
   padding: 8px 16px;
   font-size: $t4-text;
@@ -84,6 +83,32 @@
   }
 }
 
+.gray-border-btn {
+  padding: 7px 16px;
+  font-size: $t4-text;
+  font-weight: 600;
+  color: #1D2129;
+  background-color: $white;
+  border: 1px solid #1D2129;
+  border-radius: $radius-4;
+  transition: all .2s linear;
+  &:hover {
+    background-color: #D9DEE3;
+  }
+  &:focus {
+    outline: 3px auto rgba(47, 128, 237, 0.3);
+    outline-offset: 2px;
+  }
+  &.disabled {
+    color: #9CA7AE;
+    background: $white;
+    border: 1px solid #C7CED5;
+    cursor: not-allowed !important;
+    &:hover {
+      background-color: $white;
+    }
+  }
+}
 
 .ghost-btn {
   padding: 8px 16px;
