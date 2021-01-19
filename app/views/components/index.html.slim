@@ -164,3 +164,95 @@
       | STATUS RED
     span.status-tag.blue-tag.ml-3
       | STATUS BLUE
+
+  hr
+  .mb-3
+    h3 Range 
+    .range-container  
+      .range-item
+        input.normal-input type="text" placeholder="From"
+      .range-item
+        input.normal-input type="text" placeholder="To"
+
+
+  hr
+  .mb-3
+    h3 Select 
+    .dropdown-popup
+      .popup-base
+        .popup-inner
+          .search-area
+            input type="text" placeholder="Search for country"
+          .list-area  
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label India
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Afganistan
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Australia
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Belgium
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Canada
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Costa Rica
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Denmark
+          .apply-area
+            | Apply
+
+    .applied-select     
+      .dropdown-popup
+        .popup-base
+          .popup-inner
+            .search-with-chips
+              .chip
+                span 
+                  | Afganistan
+                span 
+                  i.fa.fa-times
+              .chip
+                span 
+                  | Australia
+                span 
+                  i.fa.fa-times
+              .chip
+                span 
+                  | Canada
+                span 
+                  i.fa.fa-times
+              input type="text"
+            .list-area  
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label India
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Afganistan
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Australia
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Belgium
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Canada
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Costa Rica
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Denmark
+            .apply-area.active 
+              | Apply   
+          
+        
+      
