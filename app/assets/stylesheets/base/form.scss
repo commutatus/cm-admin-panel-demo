@@ -1,12 +1,39 @@
 @import "../helpers/index.scss";
 
-
 @function weight($weight-name) {
   @return map-get($font-weights, $weight-name);
 }
 
-.form-wrapper {
+.form-page {
   margin-top: 60px;
+  padding: 24px;
+  &__inner {
+    max-width: 752px;
+  }
+  .form-wrapper {
+    .form-container {
+      .form-tile {
+        font-size: $t3-text;
+        font-weight: 600;
+        line-height: 24px;
+        color: #1d2129;
+        margin: 0 0 16px;
+      }
+      &__inner {
+        padding: 24px;
+        border: 1px solid #d9dee3;
+        border-radius: $radius-4;
+        .form-field {
+          max-width: 320px;
+        }
+      }
+    }
+  }
+}
+
+//Old form code
+.form-wrapper {
+  // margin-top: 60px;
 
   &__top-bar {
     position: fixed;
