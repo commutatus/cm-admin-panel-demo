@@ -30,6 +30,14 @@ $(document).on 'click', '.profile-avatar', (e) ->
   else
     $('.auth-popup').addClass('hidden')
 
+$(document).on 'click', '.profile-name', (e) ->
+  e.stopPropagation();
+  if $('.profile-popup').hasClass('hidden')
+    $('.profile-popup').removeClass('hidden')
+  else
+    $('.profile-popup').addClass('hidden')
+
+
 $(document).click (e) ->
   if $(e.target).parents('.auth-popup').length == 0 
     $('.auth-popup').addClass('hidden')
