@@ -1,10 +1,15 @@
 .main-nav
   .main-nav__lhs
-    = yield :bread_crumb
+    .bread-crumb-area
+      = yield :bread_crumb
+    .nav-title-area   
+      p.title-text Theresa Webb
+      p.title-sub-text This is an optional short description about the page.
   .main-nav__rhs
-	.profile-avatar
-		span CM
-		.auth-popup.hidden
-			p = link_to  "Log out", '/sign-out', method: :delete 
+    button.secondary-btn type="button"
+      span
+        i.fa.fa-edit 
+      span 
+        | Edit
 
 
