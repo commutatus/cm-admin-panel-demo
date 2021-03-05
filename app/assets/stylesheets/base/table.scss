@@ -6,8 +6,9 @@
   &__filter-bar {
     position: fixed;
     top: 140px;
-    left: 250px;
-    width: calc(100% - 250px);
+    // left: 250px;
+    // width: calc(100% - 250px);
+    width: 100%;
     min-height: 60px;
     padding: 10px 20px;
     background-color: $white;
@@ -69,6 +70,104 @@
         }
       }
     }
+  }
+
+  .admin-table-index {
+    .table-top  {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__total-count {
+        font-size: $t4-text;
+        line-height: 22px;
+        color: #6B7586;
+        margin: 0;
+      }
+      &__column-action {
+        .column-btn {
+          padding: 4px 8px;
+          span:nth-child(2) {
+            margin: 0 0 0 4px;
+          }
+        }
+      }
+    }
+  }
+
+  // table-column-modal
+  .table-column-modal {
+
+    //modal overwritten styles
+    .modal-dialog {
+      .modal-content {
+        .modal-header {
+          position: relative;
+          padding: 24px 32px 18px;
+          border: none;
+          box-shadow: inset 0px -1px 0px rgba(148, 151, 155, 0.15);
+          .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+            color: #1D2129;
+          }
+          .close {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            padding: 4px;
+            margin: 0;
+          }
+        }
+        .modal-body {
+          padding: 0;
+        }
+        .modal-footer {
+          padding: 16px 32px;
+          border: none;
+          box-shadow: inset 0px 1px 0px rgba(148, 151, 155, 0.15);
+        }
+      }
+    } 
+
+    .columns-list {
+      .column-item  {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 24px;
+        box-shadow: inset 0px -1px 0px rgba(148, 151, 155, 0.15);
+        &:hover {
+          .dragger {
+            display: block;
+          }
+        }
+        &__name {
+          font-size: 14px;
+          line-height: 22px;
+          margin-left: 4px;
+          color: #1D2129;
+        }
+        &__action {
+          padding: 5px 8px;
+          font-size: 14px;
+          color: #9CA7AE;
+        }
+        .dragger {
+          display: none;
+          position: absolute;
+          left: 4px;
+          top: 8px;
+          padding: 5px;
+          color: #9CA7AE;
+          border-radius: 4px;
+          cursor: grab;
+          &:hover {
+            background: #F3F4F6;
+          }
+        }
+      }
+    } 
   }
 
   .cm-pagination {
