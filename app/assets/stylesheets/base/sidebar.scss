@@ -30,7 +30,7 @@
       position: relative;
       font-size: $t4-text;
       line-height: 22px;
-      color: #9ca7ae;
+      color: $ink-lightest-clr;
       padding-left: 34px;
       background-color: transparent;
       border: none;
@@ -43,7 +43,7 @@
       top: 14px;
       left: 24px;
       font-size: $t4-text;
-      color: #9ca7ae;
+      color: $ink-lightest-clr;
     }
   }
 
@@ -53,7 +53,7 @@
     overflow-y: auto;
     .menu-item {
       font-size: $t4-text;
-      color: #9ca7ae;
+      color: $ink-lightest-clr;
       padding: 8px 24px;
       transition: all 0.2s linear;
       cursor: pointer;
@@ -74,7 +74,7 @@
     .menu-sub-list {
       .menu-sub-item {
         font-size: $t4-text;
-        color: #9ca7ae;
+        color: $ink-lightest-clr;
         padding: 8px 8px 8px 45px;
         transition: all 0.2s linear;
         &:hover {
@@ -109,7 +109,7 @@
         }
         &.active {
           background-color: $black;
-          border-left: 4px solid $primary-clr;
+          border-left: 4px solid $brand-color;
         }
         .tab-name {
           color: $white;
@@ -130,7 +130,7 @@
       position: relative;
       font-size: $t4-text;
       line-height: 22px;
-      color: #9ca7ae;
+      color: $ink-lightest-clr;
       cursor: pointer;
       .profile-avatar {
         display: inline-flex;
@@ -142,7 +142,7 @@
         color: $white;
         font-size: 10px;
         font-weight: 900;
-        background-color: #6554e0;
+        background-color: $brand-color;
         border-radius: 50%;
         vertical-align: middle;
       }
@@ -167,13 +167,13 @@
           .name-text {
             font-size: $t4-text;
             line-height: 22px;
-            color: #1d2129;
+            color: $primary-text-clr;
             margin: 0;
           }
           .email-text {
             font-size: $t4-text;
             line-height: 22px;
-            color: #9ca7ae;
+            color: $ink-lightest-clr;
             margin: 0;
           }
         }
@@ -186,7 +186,7 @@
           color: $white;
           font-size: $t3-text;
           font-weight: 600;
-          background-color: #6554e0;
+          background-color: $brand-color;
           border-radius: 50%;
           vertical-align: middle;
         }
@@ -198,12 +198,12 @@
           display: block;
           font-size: $t4-text;
           line-height: 22px;
-          color: #1d2129;
+          color: $primary-text-clr;
           padding: 4px 16px;
           border: none;
           transition: all 0.2s linear;
           &:hover {
-            background-color: #f3f4f6;
+            background-color: $grey-lighter-clr;
           }
         }
       }
@@ -213,11 +213,11 @@
           display: block;
           font-size: $t4-text;
           line-height: 22px;
-          color: #1d2129;
+          color: $primary-text-clr;
           padding: 4px 16px;
           transition: all 0.2s linear;
           &:hover {
-            background-color: #f3f4f6;
+            background-color: $grey-lighter-clr;
           }
         }
       }

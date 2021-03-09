@@ -10,7 +10,7 @@
       p.body-info 
         | The details of the error would be explained in this line. It could also be listed out as points on below the other if there are multiple reasons.
   .form-container
-    p.form-tile 
+    p.form-title 
       | Section heading
     .form-container__inner
       = simple_form_for([:admin, user]) do |f|
@@ -41,7 +41,7 @@
             input.normal-input type="text" placeholder="Placeholder"
 
   .form-container.mt-5
-    p.form-tile 
+    p.form-title 
       | Section heading
     .form-container__inner
       = simple_form_for([:admin, user]) do |f|

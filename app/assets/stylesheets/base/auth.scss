@@ -45,7 +45,7 @@
       padding: 8px;
       font-size: 14px;
       color: $white;
-      background: linear-gradient(to right, $primary-clr 50%, transparent 50%);
+      background: linear-gradient(to right, $brand-color 50%, transparent 50%);
       background-size: 200% 100%;
       background-position: right bottom;
       border: 1px solid $white;
@@ -53,7 +53,7 @@
       @include transition-linear;
       &:hover {
         background-position: left bottom;
-        border-color: $primary-clr;
+        border-color: $brand-color;
       }
     }
 

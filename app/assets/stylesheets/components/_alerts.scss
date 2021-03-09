@@ -1,16 +1,24 @@
 @import "../helpers/index.scss";
 
+@function size($size) {
+  @return map-get($font-size, $size);
+}
+
+@function weight($weight) {
+  @return map-get($font-weight, $weight);
+}
+
 .flag-alert {
   max-width: 752px;
   padding: 24px;
-  background: #feefef;
+  background: $red-lightest-clr;
   border-radius: $radius-4;
   .alert-header {
-    font-size: $t6-text;
-    font-weight: 600;
+    font-size: size(12);
+    font-weight: weight(bold);
     line-height: 16px;
     text-transform: uppercase;
-    color: #f83636;
+    color: $red-regular-clr;
     margin: 0;
     span {
       margin-right: 4px;
@@ -19,25 +27,25 @@
   .alert-body {
     margin-top: 16px;
     .body-title {
-      font-size: $t3-text;
-      font-weight: 600;
+      font-size: size(16);
+      font-weight: weight(bold);
       line-height: 24px;
-      color: #1d2129;
+      color: $primary-text-clr;
       margin: 0 0 8px;
     }
     .body-info {
-      font-size: $t4-text;
+      font-size: size(14);
       line-height: 22px;
-      color: #1d2129;
+      color: $primary-text-clr;
       margin: 0;
     }
     .body-list-info {
       padding-inline-start: 20px;
       margin: 0;
       li {
-        font-size: $t4-text;
+        font-size: size(14);
         line-height: 22px;
-        color: #1d2129;
+        color: $primary-text-clr;
         margin-bottom: 8px;
         &:nth-last-child(1) {
           margin-bottom: 0;
@@ -54,57 +62,57 @@
   padding: 8px 16px;
   border-radius: $radius-4;
   &.informative {
-    background: #cde1fb;
+    background: $blue-light-clr;
   }
   &.successful {
-    background: #c1ede2;
+    background: $green-light-clr;
   }
   &.warning {
-    background: #ffefc7;
+    background: $yellow-light-clr;
   }
   &.error {
-    background: #fdcfcf;
+    background: $red-light-clr;
   }
   .toast-info {
-    font-size: $t4-text;
+    font-size: size(14);
     line-height: 22px;
-    color: #1d2129;
+    color: $primary-text-clr;
     margin: 0;
   }
   .toast-close {
-    font-size: $t4-text;
-    color: #6b7586;
+    font-size: size(14);
+    color: $ink-lighter-clr;
     margin-left: 24px;
     cursor: pointer;
   }
 }
 
 .inline-alert {
-  font-size: $t4-text;
+  font-size: size(14);
   line-height: 22px;
-  color: #1d2129;
+  color: $primary-text-clr;
   span {
     margin-right: 4px;
   }
   &.informative {
     span {
-      color: #2f80ed;
+      color: $blue-regular-clr;
     }
   }
   &.successful {
     span {
-      color: #30c39e;
+      color: $green-regular-clr;
     }
   }
   &.warning {
     span {
-      color: #ffc845;
+      color: $yellow-regular-clr;
     }
   }
   &.error {
-    color: #f83636;
+    color: $red-regular-clr;
     span {
-      color: #f83636;
+      color: $red-regular-clr;
     }
   }
 }

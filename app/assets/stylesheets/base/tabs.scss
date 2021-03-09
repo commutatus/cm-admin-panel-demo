@@ -14,13 +14,13 @@
 
   .tab-item {
     font-size: 14px;
-    color: #6B7586;
+    color: $ink-lighter-clr;
     padding: 16px 0;
     margin-right: 24px;
     cursor: pointer;
     &.active {
-      color: #6554E0;
-      box-shadow: inset 0px -2px 0px #6554E0;
+      color: $brand-color;
+      box-shadow: inset 0px -2px 0px $brand-color;
     }
   }
 }

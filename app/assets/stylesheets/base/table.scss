@@ -80,7 +80,7 @@
       &__total-count {
         font-size: $t4-text;
         line-height: 22px;
-        color: #6B7586;
+        color: $ink-lighter-clr;
         margin: 0;
       }
       &__column-action {
@@ -109,7 +109,7 @@
             font-size: 24px;
             font-weight: 600;
             line-height: 32px;
-            color: #1D2129;
+            color: $primary-text-clr;
           }
           .close {
             position: absolute;
@@ -146,12 +146,12 @@
           font-size: 14px;
           line-height: 22px;
           margin-left: 4px;
-          color: #1D2129;
+          color: $primary-text-clr;
         }
         &__action {
           padding: 5px 8px;
           font-size: 14px;
-          color: #9CA7AE;
+          color: $ink-lightest-clr;
         }
         .dragger {
           display: none;
@@ -159,11 +159,11 @@
           left: 4px;
           top: 8px;
           padding: 5px;
-          color: #9CA7AE;
+          color: $ink-lightest-clr;
           border-radius: 4px;
           cursor: grab;
           &:hover {
-            background: #F3F4F6;
+            background: $grey-lighter-clr;
           }
         }
       }

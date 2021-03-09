@@ -16,14 +16,14 @@
       font-size: 16px;
       font-weight: 600;
       line-height: 24px;
-      color: #1d2129;
+      color: $primary-text-clr;
       margin: 0 0 16px;
     }
     .paper {
       max-width: 752px;
       padding: 24px;
       background-color: $white;
-      border: 1px solid #d9dee3;
+      border: 1px solid $grey-light-clr;
       border-radius: 4px;
     }
     .info-split {
@@ -37,7 +37,7 @@
         p {
           font-size: 14px;
           line-height: 22px;
-          color: #6b7586;
+          color: $ink-lighter-clr;
           margin: 0;
         }
       }
