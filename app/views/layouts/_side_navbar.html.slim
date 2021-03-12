@@ -8,21 +8,11 @@
     input type="text" placeholder="Quick Links"
 
   .sidebar__menu-wrapper
-    = link_to '/admin/users', class: 'menu-link'
+    = link_to '/', class: 'menu-link'
       .menu-item
         span.menu-icon
           i.fa.fa-th-large
-        | Users
-    = link_to '/admin/users/new', class: 'menu-link'
-      .menu-item
-        span.menu-icon
-          i.fa.fa-th-large
-        | New Users
-    = link_to '/components', class: 'menu-link'
-      .menu-item
-        span.menu-icon
-          i.fa.fa-th-large
-        | Components
+        | Dashboard
     .menu-list
       .menu-item
         span.menu-icon
@@ -34,19 +24,22 @@
       .menu-item
         span.menu-icon
           i.fa.fa-th-large
-        | Student
+        | Static pages
         span.list-arrow 
           i.fa.fa-chevron-up
       .menu-sub-list
-        = link_to '/', class: 'menu-link'
+        = link_to '/static_pages/index', class: 'menu-link'
           .menu-sub-item 
-            | Add student
-        = link_to '/', class: 'menu-link'
+            | Index
+        = link_to '/static_pages/new', class: 'menu-link'
           .menu-sub-item 
-            | All students
-        = link_to '/', class: 'menu-link'
+            | Create
+        = link_to '/static_pages/show', class: 'menu-link'
           .menu-sub-item 
-            | Academic
+            | Show
+        = link_to '/static_pages/components', class: 'menu-link'
+          .menu-sub-item 
+            | Components
 
   .sidebar__footer
     .profile-name
@@ -61,7 +54,7 @@
       .page-options 
         = link_to '/', class: 'page-link'
           | Profile
-        = link_to '/', class: 'page-link'
+        = link_to '', class: 'page-link'
           | Settings
       .auth-option
         = link_to '/sign-out', method: :delete, class: 'auth-link'

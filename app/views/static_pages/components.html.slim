@@ -1,0 +1,275 @@
+.components
+  .mb-3
+    h3 Buttons
+    button.cta-btn type="button" 
+      | Call to action
+    button.cta-btn.disabled.ml-2 type="button" 
+      | Call to action
+    button.primary-btn.ml-2 type="button" 
+      | Primary
+    button.primary-btn.disabled.ml-2 type="button" 
+      | Primary
+    button.secondary-btn.ml-2 type="button"
+      span
+        i.fa.fa-arrow-down 
+      span 
+        | Secondary
+      span 
+        i.fa.fa-angle-down
+    button.secondary-btn.disabled.ml-2 type="button"
+      span
+        i.fa.fa-arrow-down 
+      span
+        | Secondary
+      span 
+        i.fa.fa-angle-down
+    button.ghost-btn.ml-2 type="button" 
+      | Ghost
+    button.ghost-btn.disabled.ml-2 type="button" 
+      | Ghost
+    hr
+
+  .field-container.mb-3
+    h3 Input field
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+        p.field-helper-text Helper text
+      .field-input-wrapper
+        input.search-input type="text" placeholder="Placeholder"
+        span.search-input-icon
+          i.fa.fa-search
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+      .field-input-wrapper
+        input.normal-input type="text" placeholder="Placeholder"
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+          span 
+            | (Required)
+      .field-input-wrapper
+        input.normal-input type="text" placeholder="Placeholder"
+    .form-field.mb-2
+      .field-label-wrapper
+        label.field-label
+          | Label
+      .field-input-wrapper
+        input.normal-input.error type="text" placeholder="Placeholder"
+        p.error-msg
+          span
+            i.fa.fa-exclamation-circle
+          | Error message
+  hr
+
+  .mb-3
+    h3 Checkbox
+    input.cm-checkbox type="checkbox"
+    input.cm-checkbox.disabled.ml-3 type="checkbox"
+  hr
+
+  .mb-3
+    h3 Radio
+    input.cm-radio type="radio"
+    input.cm-radio.disabled.ml-3 type="radio" 
+  hr
+
+  .mb-3
+    h3 Switch
+    label.cm-switch
+      input type="checkbox" 
+      .slider.round
+  hr
+
+  .mb-3
+    h3 Alerts
+    h5 Flag alerts
+    .flag-alert
+      p.alert-header
+          span
+            i.fa.fa-exclamation-triangle
+          | Attention
+      .alert-body
+        p.body-title 
+          | Error heading
+        p.body-info 
+          | The details of the error would be explained in this line. It could also be listed out as points on below the other if there are multiple reasons.
+    .flag-alert.mt-2
+      p.alert-header
+          span
+            i.fa.fa-exclamation-triangle
+          | Attention
+      .alert-body
+        p.body-title 
+          | This student has not been added.
+        ul.body-list-info 
+          li The details of the error would be explained in this line.
+          li The details of the error would be explained in this line.
+          li The details of the error would be explained in this line.
+
+    h5.mt-3 Toast alerts
+    .toast-alert.informative
+      p.toast-info 
+        | This is a toast message.
+      .toast-close
+        i.fa.fa-times
+    .toast-alert.successful.mt-2
+      p.toast-info 
+        | This is a toast message.
+      .toast-close
+        i.fa.fa-times
+    .toast-alert.warning.mt-2
+      p.toast-info 
+        | This is a toast message.
+      .toast-close
+        i.fa.fa-times
+    .toast-alert.error.mt-2
+      p.toast-info 
+        | This is a toast message.
+      .toast-close
+        i.fa.fa-times
+    
+    h5.mt-3 Inline alerts
+    .inline-alert.informative
+      span 
+        i.fa.fa-info-circle
+      | Informative message
+    .inline-alert.successful.mt-2 
+      span 
+        i.fa.fa-check-circle
+      | Successful message
+    .inline-alert.warning.mt-2 
+      span 
+        i.fa.fa-exclamation-triangle
+      | Warning message
+    .inline-alert.error.mt-2 
+      span 
+        i.fa.fa-exclamation-circle
+      | Error message
+      
+  hr
+  .mb-3
+    h3 Status Tags
+    span.status-tag.default-tag
+      | STATUS DEFAULT
+    span.status-tag.green-tag.ml-3
+      | STATUS GREEN
+    span.status-tag.yellow-tag.ml-3
+      | STATUS YELLOW
+    span.status-tag.red-tag.ml-3
+      | STATUS RED
+    span.status-tag.blue-tag.ml-3
+      | STATUS BLUE
+
+  hr
+  .mb-3
+    h3 Range 
+    .range-container  
+      .range-item
+        input.normal-input type="text" placeholder="From"
+      .range-item
+        input.normal-input type="text" placeholder="To"
+
+  hr
+  .mb-3
+    h3 Modal 
+    button.primary-btn data-target="#confirmModal" data-toggle="modal" type="button" 
+      | Launch demo modal
+    #confirmModal.modal.fade.confirm-modal aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" 
+      .modal-dialog role="document" 
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title Modal title
+            button.close aria-label="Close" data-dismiss="modal" type="button" 
+              span aria-hidden="true"  &times;
+          .modal-body
+            p.body-content
+              | Are you sure you want to perform this action?
+          .modal-footer
+            button.gray-border-btn data-dismiss="modal" type="button"  Close
+            button.cta-btn type="button" Save 
+  hr
+  .mb-3
+    h3 Select 
+    .dropdown-popup
+      .popup-base
+        .popup-inner
+          .search-area
+            input type="text" placeholder="Search for country"
+          .list-area  
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label India
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Afganistan
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Australia
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Belgium
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Canada
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Costa Rica
+            .list-item  
+              input.cm-checkbox type="checkbox"
+              label Denmark
+          .apply-area
+            | Apply
+
+    .applied-select     
+      .dropdown-popup
+        .popup-base
+          .popup-inner
+            .search-with-chips
+              .chip
+                span 
+                  | Afganistan
+                span 
+                  i.fa.fa-times
+              .chip
+                span 
+                  | Australia
+                span 
+                  i.fa.fa-times
+              .chip
+                span 
+                  | Canada
+                span 
+                  i.fa.fa-times
+              input type="text"
+            .list-area  
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label India
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Afganistan
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Australia
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Belgium
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Canada
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Costa Rica
+              .list-item  
+                input.cm-checkbox type="checkbox"
+                label Denmark
+            .apply-area.active 
+              | Apply   
+          
+        
+      

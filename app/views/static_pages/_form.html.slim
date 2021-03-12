@@ -13,7 +13,7 @@
     p.form-title 
       | Section heading
     .form-container__inner
-      = simple_form_for([:admin, user]) do |f|
+      = simple_form_for(:user, url: '/users') do |f|
         = f.error_notification
         .form-field
           .field-label-wrapper
@@ -44,7 +44,7 @@
     p.form-title 
       | Section heading
     .form-container__inner
-      = simple_form_for([:admin, user]) do |f|
+      = simple_form_for(:user, url: '/users') do |f|
         = f.error_notification
         .form-field
           .field-label-wrapper
