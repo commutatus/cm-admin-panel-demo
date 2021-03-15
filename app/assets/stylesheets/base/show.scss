@@ -24,7 +24,7 @@
       padding: 24px;
       background-color: $white;
       border: 1px solid $grey-light-clr;
-      border-radius: 4px;
+      border-radius: $radius-4;
     }
     .info-split {
       display: flex;

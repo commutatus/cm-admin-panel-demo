@@ -23,7 +23,7 @@
 
   .admin-table {
     background-color: $white;
-    border-radius: 5px;
+    border-radius: $radius-5;
     .record-found {
       padding: 10px;
       color: #31383d;
@@ -160,7 +160,7 @@
           top: 8px;
           padding: 5px;
           color: $ink-lightest-clr;
-          border-radius: 4px;
+          border-radius: $radius-4;
           cursor: grab;
           &:hover {
             background: $grey-lighter-clr;
@@ -179,7 +179,7 @@
       font-size: 16px;
       background-color: $white;
       border: 1px solid #cbdcde;
-      border-radius: 4px;
+      border-radius: $radius-4;
       &:nth-child(2) {
         margin-left: 16px;
         transition: all 0.2s linear;

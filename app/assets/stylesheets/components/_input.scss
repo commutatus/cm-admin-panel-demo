@@ -118,7 +118,7 @@ input.cm-checkbox[type="checkbox"] {
     font-size: 11px;
     line-height: 17px;
     background: $white;
-    border: 1.5px solid #c7ced5;
+    border: 1.5px solid $grey-regular-clr;
     border-radius: $radius-2;
     cursor: pointer;
   }
@@ -166,8 +166,8 @@ input.cm-radio[type="radio"] {
     height: 16px;
     width: 16px;
     background-color: $white;
-    border: 1.5px solid #c7ced5;
-    border-radius: 50%;
+    border: 1.5px solid $grey-regular-clr;
+    border-radius: $circle;
     cursor: pointer;
   }
   &:checked:after {
@@ -242,6 +242,6 @@ input.cm-radio[type="radio"] {
   }
 
   .slider.round:before {
-    border-radius: 50%;
+    border-radius: $circle;
   }
 }
