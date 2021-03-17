@@ -1,19 +1,11 @@
 @import "../helpers/index.scss";
 
-.main-body {
-  margin-top: 280px;
+.index-page {
+  margin-top: 254px;
+  background-color: $white;
 
-  &__filter-bar {
-    position: fixed;
-    top: 140px;
-    // left: 250px;
-    // width: calc(100% - 250px);
-    width: 100%;
-    min-height: 60px;
-    padding: 10px 20px;
-    background-color: $white;
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);
-    z-index: 9;
+  &__filters {
+    // If you want to overwrite filters styles ---> add styles here
   }
 
   &__table-container {
@@ -73,6 +65,10 @@
   }
 
   .admin-table-index {
+    .table-sticky-top {
+      position: sticky;
+      top: 254px;
+    }
     .table-top  {
       display: flex;
       justify-content: space-between;

@@ -15,8 +15,7 @@ body {
   width: 100%;
   height: 100%;
 
-  // sidebar styles are in sidebar.scss
-  .main {
+  .panel-area {
     width: calc(100% - 225px);
     margin-left: 225px;
     overflow-y: auto;
@@ -30,6 +29,7 @@ body {
       max-width: 400px;
     }
   }
+  
 }
 
 

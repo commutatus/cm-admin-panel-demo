@@ -10,11 +10,10 @@ html
 
   body
     - unless controller_path.include?('welcome')
-      .admin-panel
+      .cm-admin
         = render 'layouts/side_navbar'
-        .main
-          .main-container
-            = render 'layouts/navbar'
-            = yield
+        .panel-area
+          = render 'layouts/navbar'
+          = yield
     - else
       = yield
