@@ -130,8 +130,9 @@
       .column-item  {
         position: relative;
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        padding: 13px 24px;
+        padding: 8px 24px;
         box-shadow: inset 0px -1px 0px rgba(148, 151, 155, 0.15);
         &:hover {
           .dragger {
@@ -143,6 +144,9 @@
           line-height: 22px;
           margin-left: 4px;
           color: $primary-text-clr;
+          p {
+            margin: 0;
+          }
         }
         &__action {
           padding: 5px 8px;
