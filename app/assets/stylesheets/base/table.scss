@@ -161,6 +161,7 @@
           padding: 5px;
           color: $ink-lightest-clr;
           border-radius: $radius-4;
+          animation: fadeIn .1s ease-in-out;
           cursor: grab;
           &:hover {
             background: $grey-lighter-clr;

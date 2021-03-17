@@ -16,7 +16,7 @@
     .bread-crumb-area {
       .breadcrumb-text {
         font-size: $t4-text;
-        line-height: 22px;     
+        line-height: 22px;
         color: $ink-lighter-clr;
         margin: 0 0 16px;
         a {
@@ -42,6 +42,31 @@
   }
 
   &__rhs {
-    
+    display: flex;
+    align-items: center;
+
+    .export-container {
+      position: relative;
+      .export-popup {
+        top: 45px;
+        width: 156px;
+        padding: 8px 0;
+        animation: fadeIn .2s ease-in-out;
+        .popup-option {
+          padding: 8px 16px;
+          font-size: 14px;
+          line-height: 22px;
+          color: $primary-text-clr;
+          transition: all .2s linear;
+          cursor: pointer;
+          &:hover {
+            background-color: $grey-lighter-clr;
+          }
+          span {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
   }
 }

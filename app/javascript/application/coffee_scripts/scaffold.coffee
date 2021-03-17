@@ -37,6 +37,13 @@ $(document).on 'click', '.profile-name', (e) ->
   else
     $('.profile-popup').addClass('hidden')
 
+$(document).on 'click', '.export-container', (e) ->
+  e.stopPropagation();
+  if $('.export-popup').hasClass('hidden')
+    $('.export-popup').removeClass('hidden')
+  else
+    $('.export-popup').addClass('hidden')
+
 
 $(document).click (e) ->
   if $(e.target).parents('.auth-popup').length == 0 
