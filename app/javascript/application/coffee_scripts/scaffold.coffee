@@ -23,6 +23,22 @@ $(document).on 'change', '[data-behaviour="upload-image"]', () ->
     $('[data-behaviour="upload-title"]').text('Upload')
     $('.upload-icon').removeClass('hidden')
 
+$(document).on 'change', '[data-behaviour="upload-file"]', () ->
+  file_path_array = $(this).val().split('\\')
+  file_name = file_path_array[file_path_array.length - 1]
+  file_ext = file_name.substring(file_name.lastIndexOf('.') + 1)
+  if file_name.length > 20
+    file_name = file_name.substring(0, 15)+'...' + file_ext
+  if $(this).val() != ""
+    $('[data-behaviour="uploaded-file-name"]').text(file_name)
+    if file_name.length > 20
+      $('[data-behaviour="uploaded-file-name"]').tooltip({title: file_path_array[file_path_array.length - 1]})
+      $('[data-behaviour="uploaded-file-name"]').tooltip()
+    else 
+      $('[data-behaviour="uploaded-file-name"]').tooltip('hide')
+  else
+    $('[data-behaviour="uploaded-file-name"]').text('')
+
 $(document).on 'click', '.profile-avatar', (e) ->
   e.stopPropagation();
   if $('.auth-popup').hasClass('hidden')

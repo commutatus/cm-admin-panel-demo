@@ -64,27 +64,38 @@
           span
             i.fa.fa-exclamation-circle
           | Error message
+  hr 
+  .mb-3 
+    h3 File upload
+    .form-field
+      .field-label-wrapper
+        label.field-label
+          | Label
+      .file-upload-wrapper 
+        .file-upload-input
+          input#img data-behaviour="upload-file" accept="image/*" name="img" type="file" 
+          span.upload-placeholder-1 City is 
+          span.upload-placeholder-2 Upload file
+        p.file-name data-behaviour="uploaded-file-name" data-toggle="tooltip" data-placement="top"
   hr
-
   .mb-3
     h3 Checkbox
     input.cm-checkbox type="checkbox"
     input.cm-checkbox.disabled.ml-3 type="checkbox"
-  hr
 
+  hr
   .mb-3
     h3 Radio
     input.cm-radio type="radio"
     input.cm-radio.disabled.ml-3 type="radio" 
-  hr
 
+  hr
   .mb-3
     h3 Switch
     label.cm-switch
       input type="checkbox" 
       .slider.round
   hr
-
   .mb-3
     h3 Alerts
     h5 Flag alerts
