@@ -60,66 +60,175 @@
               button.gray-border-btn data-dismiss="modal" type="button"  Close
               button.cta-btn type="button" Save 
 
-.admin-table.mt-5
-  .record-found
-    | 115 companies found
-
+.new-admin-table
   table.cm-table
     thead.cm-table__header
-      tr
-        th First Name
-        th Last Name
-        th Email Id
-        th Phone number
-        th Location 
-        th 
+      tr.header-row
+        th.check-box-space
+          span
+            input.cm-checkbox type="checkbox"
+        th.name-space
+          span Name
+        th Email
+        th Number
+        th Address
+        th City
+        th Price (INR)
+        th Status
+        th country
+        th College
       
     tbody.cm-table__body
-      tr 
-        td Commutatus
-        td Commutatus
-        td Commutatus
-        td Commutatus
+      tr.body-row 
+        td.check-box-space
+          input.cm-checkbox type="checkbox"
+        td Barath
+        td Barath@commutatus.com
+        td 8753536262
+        td.text-ellipsis 57/11, Thiruvalluvar salai, Teynampet 
+        td Chennai
+        td 1,000
         td 
-          img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
+          span.status-tag.green-tag
+            | STATUS GREEN
+        td TamilNadu
+        td Gurunanak college
+
+      tr.body-row 
+        td.check-box-space
+          input.cm-checkbox type="checkbox"
+        td Barath
+        td Barath@commutatus.com
+        td 8753536262
+        td.text-ellipsis 57/11, Thiruvalluvar salai, Teynampet 
+        td Chennai
+        td 1,000
         td 
-          i.fa.fa-pencil.edit-icon
-      tr 
-        td Commutatus
-        td Commutatus
-        td Commutatus
-        td Commutatus
+          span.status-tag.green-tag
+            | STATUS GREEN
+        td TamilNadu
+        td Gurunanak college
+      
+      tr.body-row 
+        td.check-box-space
+          input.cm-checkbox type="checkbox"
+        td Barath
+        td Barath@commutatus.com
+        td 8753536262
+        td.text-ellipsis 57/11, Thiruvalluvar salai, Teynampet 
+        td Chennai
+        td 1,000
         td 
-          img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
+          span.status-tag.green-tag
+            | STATUS GREEN
+        td TamilNadu
+        td Gurunanak college
+      
+      tr.body-row 
+        td.check-box-space
+          input.cm-checkbox type="checkbox"
+        td Barath
+        td Barath@commutatus.com
+        td 8753536262
+        td.text-ellipsis 57/11, Thiruvalluvar salai, Teynampet 
+        td Chennai
+        td 1,000
         td 
-          i.fa.fa-pencil.edit-icon
-      tr 
-        td Commutatus
-        td Commutatus
-        td Commutatus
-        td Commutatus
+          span.status-tag.green-tag
+            | STATUS GREEN
+        td TamilNadu
+        td Gurunanak college
+
+      tr.body-row 
+        td.check-box-space
+          input.cm-checkbox type="checkbox"
+        td Barath
+        td Barath@commutatus.com
+        td 8753536262
+        td.text-ellipsis 57/11, Thiruvalluvar salai, Teynampet 
+        td Chennai
+        td 1,000
         td 
-          img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
+          span.status-tag.green-tag
+            | STATUS GREEN
+        td TamilNadu
+        td Gurunanak college
+
+      tr.body-row 
+        td.check-box-space
+          input.cm-checkbox type="checkbox"
+        td Barath
+        td Barath@commutatus.com
+        td 8753536262
+        td.text-ellipsis 57/11, Thiruvalluvar salai, Teynampet 
+        td Chennai
+        td 1,000
         td 
-          i.fa.fa-pencil.edit-icon
-      tr 
-        td Commutatus
-        td Commutatus
-        td Commutatus
-        td Commutatus
+          span.status-tag.green-tag
+            | STATUS GREEN
+        td TamilNadu
+        td Gurunanak college
+      
+      tr.body-row 
+        td.check-box-space
+          input.cm-checkbox type="checkbox"
+        td Barath
+        td Barath@commutatus.com
+        td 8753536262
+        td.text-ellipsis 57/11, Thiruvalluvar salai, Teynampet 
+        td Chennai
+        td 1,000
         td 
-          img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
-        td 
-          i.fa.fa-pencil.edit-icon
-      tr 
-        td Commutatus
-        td Commutatus
-        td Commutatus
-        td Commutatus
-        td 
-          img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
-        td 
-          i.fa.fa-pencil.edit-icon
+          span.status-tag.green-tag
+            | STATUS GREEN
+        td TamilNadu
+        td Gurunanak college
+
+
+
+/ .admin-table.mt-5
+/   .record-found
+/     | 115 companies found
+
+/   table.cm-table
+/     thead.cm-table__header
+/       tr
+/         th First Name
+/         th Last Name
+/         th Email Id
+/         th Phone number
+/         th Location 
+/         th 
+      
+/     tbody.cm-table__body
+/       tr 
+/         td Commutatus
+/         td Commutatus
+/         td Commutatus
+/         td Commutatus
+/         td 
+/           img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
+/         td 
+/           i.fa.fa-pencil.edit-icon
+/       tr 
+/         td Commutatus
+/         td Commutatus
+/         td Commutatus
+/         td Commutatus
+/         td 
+/           img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
+/         td 
+/           i.fa.fa-pencil.edit-icon
+/       tr 
+/         td Commutatus
+/         td Commutatus
+/         td Commutatus
+/         td Commutatus
+/         td 
+/           img alt=("Commutatus logo") src="https://s3.ap-south-1.amazonaws.com/mentormind/companies/profile_pictures/000/000/103/original/Commutatus_logo.jpg?1557384349" width="60px"
+/         td 
+/           i.fa.fa-pencil.edit-icon
+
       
 .cm-pagination
   .cm-pagination__item Showing 1 of 4 pages

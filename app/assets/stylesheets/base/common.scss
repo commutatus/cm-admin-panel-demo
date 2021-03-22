@@ -179,6 +179,11 @@
   margin-left: 2px;
 }
 
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @keyframes shakeError {
   10%,
   90% {
