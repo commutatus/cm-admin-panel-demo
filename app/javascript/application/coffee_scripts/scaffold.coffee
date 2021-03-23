@@ -9,7 +9,7 @@ $(document).on "turbolinks:load", () ->
     placeholder: "Select a state",
     allowClear: true
   });
-
+  
 $(document).on "turbolinks:load", () ->
   $(".multi-select").select2();
 
