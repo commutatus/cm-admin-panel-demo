@@ -137,7 +137,7 @@
             width: 88px;
             max-width: inherit;
             min-width: inherit;
-            height: 58px;
+            height: 56px;
             padding: 0;
             background: linear-gradient(270deg, #F3F4F6 81.75%, rgba(243, 244, 246, 0) 100%);
             opacity: 0;
@@ -267,20 +267,36 @@
 
   .cm-pagination {
     display: flex;
-    justify-content: center;
-    margin: 30px 0;
-    &__item {
-      padding: 5px 10px;
-      font-size: 16px;
-      background-color: $white;
-      border: 1px solid #cbdcde;
-      border-radius: $radius-4;
-      &:nth-child(2) {
-        margin-left: 16px;
-        transition: all 0.2s linear;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border: 1px solid $grey-lighter-clr;
+    &__lhs {
+      @include font($size: $t4-text, $color: $ink-lightest-clr, $weight: bold);
+      line-height: 22px;
+    }
+    &__rhs {
+      display: inline-flex;
+      align-items: center;
+      .page-move-btn {
+        font-size: 10px;
+        line-height: 12px;
+        color: $primary-text-clr;
+        padding: 10px 11px;
         cursor: pointer;
-        &:hover {
-          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        &.disabled {
+          color: #9CA7AE;
+        }
+      }
+      .page-num-btn {
+        @include font($size: $t4-text, $color: $primary-text-clr, $weight: bold);
+        margin: 0 8px;
+        padding: 5px 11px;
+        cursor: pointer;
+        &.active {
+          background-color: $grey-lightest-clr;
+          border: 1px solid $grey-light-clr;
+          border-radius: $radius-4;
         }
       }
     }

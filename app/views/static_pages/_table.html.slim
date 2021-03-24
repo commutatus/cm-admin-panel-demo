@@ -287,6 +287,20 @@
 
       
 .cm-pagination
-  .cm-pagination__item Showing 1 of 4 pages
-  .cm-pagination__item Next
+  .cm-pagination__lhs Showing 1 to 15 out of 104 
+  .cm-pagination__rhs 
+    span.page-move-btn.disabled   
+      i.fa.fa-angle-double-left.bolder.f14
+    span.page-move-btn.disabled 
+      i.fa.fa-chevron-left.bolder
+    span.page-num-btn.active 1
+    span.page-num-btn 2
+    span.page-num-btn 3
+    span.page-num-btn 4
+    span.page-num-btn 5
+    span.page-move-btn   
+      i.fa.fa-chevron-right.bolder
+    span.page-move-btn   
+      i.fa.fa-angle-double-right.bolder.f14
+    
   / cm_paginate(@filtered_result.facets)
