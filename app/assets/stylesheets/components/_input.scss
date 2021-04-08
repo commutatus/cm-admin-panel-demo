@@ -1,19 +1,10 @@
 @import "../helpers/index.scss";
 
-@function size($size) {
-  @return map-get($font-size, $size);
-}
-
-@function weight($weight) {
-  @return map-get($font-weight, $weight);
-}
-
 .form-field {
   .field-label-wrapper {
     .field-label {
-      font-size: size(14);
+      @include font($size: $t4-text, $color: $primary-text-clr);
       line-height: 22px;
-      color: $primary-text-clr;
       margin: 0 0 4px;
       span {
         color: $ink-lightest-clr;
@@ -21,18 +12,16 @@
       }
     }
     .field-helper-text {
-      font-size: size(14);
+      @include font($size: $t4-text, $color: $ink-lighter-clr);
       line-height: 22px;
-      color: $ink-lighter-clr;
       margin: 0 0 4px;
     }
   }
   .field-input-wrapper {
     position: relative;
     .error-msg {
-      font-size: size(14);
+      @include font($size: $t4-text, $color: $error-clr);
       line-height: 22px;
-      color: $error-clr;
       margin: 4px 0 0;
       animation: shakeError 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
       transform: translate3d(0, 0, 0);
@@ -50,9 +39,8 @@
   position: relative;
   width: 100%;
   padding: 8px 0 8px 40px;
-  font-size: size(14);
+  @include font($size: $t4-text, $color: $primary-text-clr);
   line-height: 22px;
-  color: $primary-text-clr;
   background-color: $white;
   border: 1px solid $grey-light-clr;
   border-radius: $radius-4;
@@ -67,17 +55,15 @@
   position: absolute;
   top: 8px;
   left: 16px;
-  color: $ink-lightest-clr;
-  font-size: size(14);
+  @include font($size: $t4-text, $color: $ink-lightest-clr);
 }
 
 //Normal input styles
 .normal-input {
   width: 100%;
   padding: 8px 16px;
-  font-size: size(14);
+  @include font($size: $t4-text, $color: $primary-text-clr);
   line-height: 22px;
-  color: $primary-text-clr;
   background-color: $white;
   border: 1px solid $grey-light-clr;
   border-radius: $radius-4;
@@ -123,20 +109,15 @@
     }
     
     .upload-placeholder-1 { 
-      font-size: $t4-text;
-      font-weight: 600;
-      color: $ink-lighter-clr;
+      @include font($size: $t4-text, $color: $ink-lighter-clr, $weight: 600);
     }
     .upload-placeholder-2 {
-      font-size: $t4-text;
-      font-weight: 600;
-      color: $primary-text-clr;
+      @include font($size: $t4-text, $color: $primary-text-clr, $weight: 600);
       margin-left: 4px;
     }
   }
   .file-name {
-    font-size: $t4-text;
-    color: $primary-text-clr;
+    @include font($size: $t4-text, $color: $primary-text-clr);
     margin: 0 0 0 8px;
   }
 }

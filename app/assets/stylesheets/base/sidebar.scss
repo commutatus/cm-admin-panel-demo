@@ -28,9 +28,8 @@
     input {
       width: 100%;
       position: relative;
-      font-size: $t4-text;
+      @include font($size: $t4-text, $color: $ink-lightest-clr);
       line-height: 22px;
-      color: $ink-lightest-clr;
       padding-left: 34px;
       background-color: transparent;
       border: none;
@@ -183,9 +182,7 @@
           justify-content: center;
           width: 32px;
           height: 32px;
-          color: $white;
-          font-size: $t3-text;
-          font-weight: 600;
+          @include font($size: $t3-text, $color: $white, $weight: 600);
           background-color: $brand-color;
           border-radius: $circle;
           vertical-align: middle;

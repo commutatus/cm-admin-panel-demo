@@ -197,10 +197,8 @@
           border: none;
           box-shadow: inset 0px -1px 0px rgba(148, 151, 155, 0.15);
           .modal-title {
-            font-size: 24px;
-            font-weight: 600;
+            @include font($size: 24px, $color: $primary-text-clr, $weight: 600);
             line-height: 32px;
-            color: $primary-text-clr;
           }
           .close {
             position: absolute;
@@ -235,7 +233,7 @@
           }
         }
         &__name {
-          font-size: 14px;
+          font-size: $t4-text;
           line-height: 22px;
           margin-left: 4px;
           color: $primary-text-clr;
@@ -245,7 +243,7 @@
         }
         &__action {
           padding: 5px 8px;
-          font-size: 14px;
+          font-size: $t4-text;
           color: $ink-lightest-clr;
         }
         .dragger {

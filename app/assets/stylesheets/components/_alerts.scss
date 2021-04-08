@@ -1,13 +1,5 @@
 @import "../helpers/index.scss";
 
-@function size($size) {
-  @return map-get($font-size, $size);
-}
-
-@function weight($weight) {
-  @return map-get($font-weight, $weight);
-}
-
 .flag-alert {
   max-width: 752px;
   padding: 24px;
@@ -80,9 +72,8 @@
 }
 
 .inline-alert {
-  font-size: size(14);
+  @include font($size: $t4-text, $color: $primary-text-clr);
   line-height: 22px;
-  color: $primary-text-clr;
   span {
     margin-right: 4px;
   }
