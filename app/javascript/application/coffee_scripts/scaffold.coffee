@@ -5,6 +5,9 @@ $(document).on "turbolinks:load", () ->
   $('.filter-rangepicker').daterangepicker()
 
 $(document).on "turbolinks:load", () ->
+  $('.rangepicker').daterangepicker()
+
+$(document).on "turbolinks:load", () ->
   $(".single-select").select2({
     placeholder: "Select a state",
     allowClear: true

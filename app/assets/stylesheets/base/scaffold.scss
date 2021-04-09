@@ -37,8 +37,20 @@ a {
   text-decoration: none !important;
 }
 
-// datepicker theme styles
+// daterangepicker theme styles
 .daterangepicker {
+  .active {
+    background-color: $brand-color !important;
+  }
+  .drp-buttons {
+    .btn-primary {
+      background-color: $brand-color !important;
+    }
+  }
+}
+
+// datepicker theme styles
+.datepicker {
   .active {
     background-color: $brand-color !important;
   }

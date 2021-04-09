@@ -184,7 +184,14 @@
         input.normal-input type="text" placeholder="From"
       .range-item
         input.normal-input type="text" placeholder="To"
-  
+    input.rangepicker.mt-3 name="daterange" type="text"
+
+  hr
+  .mb-3
+    h3 DatePicker 
+    .form-field
+      .field-input-wrapper
+        input.normal-input.w-400 type="text" placeholder="Pick Date"  data-provide="datepicker"  
   hr
   .mb-3
     h3 Filter Chips 
@@ -214,6 +221,53 @@
           .modal-footer
             button.gray-border-btn data-dismiss="modal" type="button"  Close
             button.cta-btn type="button" Save 
+  hr
+  .mb-3
+    h3 Column dropdown 
+    .column-popup
+      .column-option
+        p.option-title Sort
+        .option-action 
+          span.action-icon 
+            i.fa.fa-arrow-up.bolder
+          span.action-name Ascending
+        .option-action 
+          span.action-icon 
+            i.fa.fa-arrow-down.bolder
+          span.action-name Descending
+      .column-option
+        p.option-title Options
+        .option-action 
+          span.action-icon 
+            i.fa.fa-arrow-left.bolder
+          span.action-name Move left
+        .option-action 
+          span.action-icon 
+            i.fa.fa-arrow-right.bolder
+          span.action-name Move right
+        .option-action 
+          span.action-icon 
+            i.fa.fa-eye-slash.bolder
+          span.action-name Hide
+
+    .column-popup.ml-5
+      .column-option
+        p.option-title Sort
+        p.cannot-sort This column cannot be sorted
+      .column-option
+        p.option-title Options
+        .option-action 
+          span.action-icon 
+            i.fa.fa-arrow-left.bolder
+          span.action-name Move left
+        .option-action 
+          span.action-icon 
+            i.fa.fa-arrow-right.bolder
+          span.action-name Move right
+        .option-action 
+          span.action-icon 
+            i.fa.fa-eye-slash.bolder
+          span.action-name Hide
   hr
   .mb-3
     h3 Select 
@@ -292,6 +346,7 @@
                 label Denmark
             .apply-area.active 
               | Apply   
+
           
         
       

@@ -97,3 +97,45 @@
 .applied-select {
   margin-left: 20rem;
 }
+
+.column-popup {
+  display: inline-block;
+  min-width: 156px;
+  max-height: 295px;
+  background-color: $white;
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.16));
+  border-radius: $radius-4;
+  z-index: 1;
+  .column-option {
+    .option-title {
+      @include font($size: $t6-text, $color: $ink-lightest-clr, $weight: 600);
+      line-height: 16px;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 18px 16px 9px;
+    }
+    .option-action {
+      padding: 9px 16px;
+      cursor: pointer;
+      @include transition-linear;
+      &:hover {
+        background-color: $grey-lighter-clr;
+      }
+      .action-icon {
+        font-size: $t4-text;
+      }
+      .action-name {
+        @include font($size: $t4-text, $color: $primary-text-clr);
+        line-height: 22px;
+        margin-left: 8px;
+      }
+    }
+    .cannot-sort {
+      font-size: $t6-text;
+      line-height: 16px;
+      color: $ink-lightest-clr;
+      margin-bottom: 9px;
+      padding: 0 16px;
+    }
+  }
+}
