@@ -5,6 +5,10 @@ $(document).on "turbolinks:load", () ->
   $('.filter-rangepicker').daterangepicker()
 
 $(document).on "turbolinks:load", () ->
+  $('.quick-search-modal').on 'shown.bs.modal', ->
+   $('#quick-search-input').focus()
+
+$(document).on "turbolinks:load", () ->
   $('.rangepicker').daterangepicker()
 
 $(document).on "turbolinks:load", () ->

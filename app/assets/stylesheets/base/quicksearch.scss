@@ -10,6 +10,17 @@
       }
     }
   }
+  .quick-search-field {
+    .clear-search {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      font-size: $t4-text;
+      line-height: 22px;
+      color: $ink-lighter-clr;
+      cursor: pointer;
+    }
+  }
   .search-results-container {
     margin: 16px 0;
     .result-item {
