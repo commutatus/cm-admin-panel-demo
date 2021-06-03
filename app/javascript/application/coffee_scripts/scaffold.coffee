@@ -67,6 +67,13 @@ $(document).on 'click', '.export-container', (e) ->
   else
     $('.export-popup').addClass('hidden')
 
+$(document).on 'click', '.row-action-tool', (e) ->
+  e.stopPropagation();
+  if $('.table-export-popup').hasClass('hidden')
+    $('.table-export-popup').removeClass('hidden')
+  else
+    $('.table-export-popup').addClass('hidden')
+
 
 $(document).click (e) ->
   if $(e.target).parents('.auth-popup').length == 0 
