@@ -5,12 +5,7 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
-require("daterangepicker")
 import jQuery from 'jquery';
 window.$ = jQuery
 window.jQuery = jQuery
-import 'select2';
-import 'bootstrap/dist/js/bootstrap';
-import 'bootstrap-datepicker/dist/js/bootstrap-datepicker.js';
-import '../application/coffee_scripts/scaffold.coffee';
-import 'cocoon';
+

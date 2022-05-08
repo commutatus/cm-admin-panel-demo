@@ -9,7 +9,7 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    - unless controller_path.include?('welcome')
+    - unless controller_path.include?('devise')
       .admin-panel
         = render 'layouts/side_navbar'
         .main
@@ -17,4 +17,4 @@ html
             = render 'layouts/navbar'
             = yield
     - else
-      = yield
+       = yield
