@@ -94,6 +94,13 @@ GEM
       slim (~> 4.1.0)
       webpacker (~> 5.2.1)
     cocoon (1.2.15)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     devise (4.8.1)
@@ -103,6 +110,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    execjs (2.8.1)
     ffi (1.15.5)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
@@ -269,6 +277,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   cm-admin (~> 0.6.5)
   cocoon
+  coffee-rails
   devise
   font-awesome-rails
   jbuilder (~> 2.7)
