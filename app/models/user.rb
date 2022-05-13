@@ -23,6 +23,10 @@ class User < ApplicationRecord
       end
     end
 
+  def user_name
+    email.split('@').first
+  end
+
   def super_admin?
     true
   end

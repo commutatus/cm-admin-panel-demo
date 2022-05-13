@@ -1,0 +1,31 @@
+.cm-sidebar
+  .cm-sidebar__logo-header
+    = image_tag('cm.png', alt: 'Demo logo')
+
+  .cm-sidebar__quick-search
+    span
+      i.fa.fa-search
+    input data-bs-target="#quickSearchModal" data-bs-toggle="modal" type="text" placeholder="Quick Links"
+
+  .cm-sidebar__menu-wrapper
+    = navigation_links('sidebar')
+
+    .sidebar-menu__tabs-wrapper
+
+
+  .sidebar__footer
+    .menu-item
+      .profile-name
+        span.profile-avatar = image_tag 'same-logo.png'
+        | #{current_user.user_name}
+    .profile-popup.hidden
+      .profile-info
+        .profile-info__left
+          p.name-text = current_user.user_name
+          p.email-text.text-ellipsis = current_user.email
+        .profile-info__right = image_tag 'same-logo.png'
+      .auth-option
+        = link_to destroy_user_session_path, method: :delete, class: 'auth-link'
+          | Logout
+
+= render 'layouts/quick_links'

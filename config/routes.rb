@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_scope :user do
+      root 'devise/sessions#new'
+  end
   mount CmAdmin::Engine => "/cm_admin"
   get 'sign_in' => 'welcome#sign_in'
   get 'sign_up' => 'welcome#sign_up'
