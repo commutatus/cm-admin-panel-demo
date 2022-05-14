@@ -4,4 +4,8 @@ class CmAdmin::UserPolicy < ApplicationPolicy
     @user.super_admin?
   end
 
+  def user_dsl?
+    @user.super_admin?
+  end
+
 end
