@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  assessable: one
+  assessable_type: Assessable
+
+two:
+  title: MyString
+  description: MyString
+  assessable: two
+  assessable_type: Assessable
