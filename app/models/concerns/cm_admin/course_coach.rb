@@ -25,7 +25,7 @@ module CmAdmin::CourseCoach
 
       cm_new page_title: 'Add CourseCoach', page_description: 'Enter all details to add CourseCoach' do
         form_field :user_id, input_type: :string
-        form_field :course_id, input_type: :single_select, label: 'Access level', collection: Course.only_beginner.map {|course| [course.title, course.id]}
+        # form_field :course_id, input_type: :single_select, label: 'Access level', collection: Course.only_beginner.map {|course| [course.title, course.id]}
         # form_field :description, input_type: :string
       end
 
