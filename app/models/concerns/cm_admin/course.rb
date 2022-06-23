@@ -27,7 +27,7 @@ module CmAdmin::Course
           column :user_id, header: "User"
         end
         tab :assessments, 'assessments', associated_model: :assessments, layout_type: 'cm_association_index' do
-          column :title, header: "Title"
+          column :title, header: 'Title'
         end
       end
 
