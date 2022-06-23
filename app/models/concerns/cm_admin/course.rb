@@ -10,7 +10,6 @@ module CmAdmin::Course
 
         column :title
         column :description
-
       end
 
       cm_show page_title: :title do
