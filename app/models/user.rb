@@ -7,6 +7,10 @@ class User < ApplicationRecord
     has_many :educational_details, inverse_of: :user
     accepts_nested_attributes_for :educational_details, reject_if: :all_blank, allow_destroy: true
 
+  has_one_attached :profile_picture
+
+  enum gender: { male: 0, female: 1 }
+
   def user_name
     email.split('@').first
   end

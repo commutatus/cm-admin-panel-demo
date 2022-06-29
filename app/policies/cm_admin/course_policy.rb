@@ -32,5 +32,9 @@ class CmAdmin::CoursePolicy < ApplicationPolicy
   def assessments?
     show?
   end
+
+  def course_detail?
+    show?
+  end
   
 end
