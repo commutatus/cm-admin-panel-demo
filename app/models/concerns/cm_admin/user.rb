@@ -9,6 +9,14 @@ module CmAdmin::User
         page_description 'Manage all users here'
 
         filter [:first_name, :last_name, :email], :search, placeholder: 'Search'
+        filter :age, :range, placeholder: 'User age'
+        filter :dob, :date, placeholder: 'Birthday'
+        filter :gender, :single_select,
+          collection: ['male', 'female'],
+          placeholder: 'Gender'
+        filter :gender, :multi_select,
+          collection: ['male', 'female'],
+          placeholder: 'Gender'
 
         column :first_name, header: 'First Name'
         column :last_name, header: 'Last Name'

@@ -13,6 +13,7 @@ module CmAdmin
 
           column :title
           column :description
+          column :created_at, field_type: :datetime, format: "%b %d, %Y %H:%M:%S"
         end
 
         cm_show page_title: :title do

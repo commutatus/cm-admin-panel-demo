@@ -36,6 +36,6 @@ gem 'spotlight_search'
 gem 'kaminari'
 gem 'font-awesome-rails'
 gem "cocoon"
-gem 'cm-admin', '~> 0.7.3'
+gem 'cm-admin', '~> 0.7.6'
 # gem 'cm-admin', path: '/Users/anbazhaganpalani/Projects/cm-admin'
 gem 'devise'
