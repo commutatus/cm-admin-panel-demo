@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_12_133918) do
+ActiveRecord::Schema.define(version: 2022_07_13_062844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,23 @@ ActiveRecord::Schema.define(version: 2022_07_12_133918) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chapter_id"], name: "index_lessons_on_chapter_id"
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.string "loggable_type", null: false
+    t.bigint "loggable_id", null: false
+    t.string "log_content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["loggable_type", "loggable_id"], name: "index_logs_on_loggable"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.integer "price_cents"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

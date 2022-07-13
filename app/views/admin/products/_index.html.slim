@@ -1,0 +1,7 @@
+- @ar_object.data.each do |ar_object|
+  .card.float-left style=("width: 18rem;") 
+    img.card-img-top alt="..." src="..." /
+    .card-body
+      h5.card-title = ar_object.name || "N/A"
+      p.card-text Some static description
+      a.btn.btn-primary href="#{cm_admin.product_show_path(ar_object)}"  Check product

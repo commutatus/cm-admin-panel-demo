@@ -1,0 +1,7 @@
+.mb-3 style=("max-width: 752px;") 
+  .row.g-0
+    .product-create-description 
+      | Tell us the title of your new product before you get started. You can always edit this later, if required.
+    = simple_form_for(Product.new, url: "/cm_admin/products/create", method: :post) do |f|
+      = f.input :name, placeholder: 'Enter product title', label: false
+      = f.button :submit, class: "btn btn-primary"
