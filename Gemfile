@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby "3.0.0"
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
-gem 'webpacker', '~> 5.2.1'
+gem 'webpacker', '~> 5.4.3'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -36,6 +36,6 @@ gem 'spotlight_search'
 gem 'kaminari'
 gem 'font-awesome-rails'
 gem "cocoon"
-gem 'cm-admin', '~> 0.7.6'
-# gem 'cm-admin', path: '/Users/anbazhaganpalani/Projects/cm-admin'
+# gem 'cm-admin', '~> 0.7.6'
+gem 'cm-admin', path: '/Users/anbazhaganpalani/Projects/cm-admin'
 gem 'devise'
