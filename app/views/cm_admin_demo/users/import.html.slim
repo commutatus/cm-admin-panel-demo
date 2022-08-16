@@ -1,0 +1,6 @@
+| Import the CSV form
+
+= simple_form_for(FileImport.new, url: "/admin/users/import", method: :post) do |f|
+  = f.input :associated_model_name, as: :hidden, placeholder: 'Enter product title', label: false, input_html: { value: 'User' }
+  = f.input :import_file, as: :file, placeholder: 'Enter product title', label: false
+  = f.button :submit, class: "btn btn-primary"

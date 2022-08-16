@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_13_062844) do
+ActiveRecord::Schema.define(version: 2022_08_10_065826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,12 @@ ActiveRecord::Schema.define(version: 2022_07_13_062844) do
     t.string "address_line1"
     t.string "address_line2"
     t.index ["user_id"], name: "index_educational_details_on_user_id"
+  end
+
+  create_table "file_imports", force: :cascade do |t|
+    t.string "associated_model_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lessons", force: :cascade do |t|

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include CmAdmin::User
+  include Paginator
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

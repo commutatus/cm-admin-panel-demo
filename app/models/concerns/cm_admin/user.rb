@@ -26,6 +26,13 @@ module CmAdmin::User
         column :gender, field_type: :tag
         column :mobile_number
 
+        custom_action name: 'import', route_type: "collection", verb: "post", path: '/import', display_type: :route do
+          allowed_params = params.permit(file_import: [:import_file, :associated_model_name]).to_h
+          file_import_params = allowed_params[:file_import]
+          file_import = FileImport.new(file_import_params).save(validate: false)
+          FileImport.last
+        end
+
       end
 
       cm_show page_title: :first_name do
@@ -41,6 +48,7 @@ module CmAdmin::User
           end
         end
         tab :dsl, 'user_dsl', layout_type: 'cm_association_show', partial: '/cm_admin_demo/users/dsl'
+        tab :import, 'user_import', layout_type: 'cm_association_show', partial: '/cm_admin_demo/users/import'
       end
 
       cm_new page_title: 'Add Learner', page_description: 'Enter all details to add learner' do

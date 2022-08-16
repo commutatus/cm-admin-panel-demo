@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  importable: one
+  importable_type: Importable
+
+two:
+  importable: two
+  importable_type: Importable

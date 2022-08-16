@@ -9,6 +9,8 @@ module CmAdmin::Chapter
       cm_index do
         page_title 'Chapter'
         page_description 'Manage all chapters here'
+        
+        filter [:title], :search, placeholder: 'Search'
 
         column :title
         column :description

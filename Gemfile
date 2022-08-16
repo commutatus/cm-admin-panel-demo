@@ -40,3 +40,8 @@ gem "cocoon"
 # gem 'cm-admin', '~> 0.7.6'
 gem 'cm-admin', path: '/Users/anbazhaganpalani/Projects/cm-admin'
 gem 'devise'
+gem 'graphql'
+gem 'graphql-errors'
+gem 'graphql-rails_logger'
+gem 'graphiql-rails', group: :development
+gem 'sidekiq'

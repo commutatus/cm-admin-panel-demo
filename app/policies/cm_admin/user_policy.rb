@@ -24,4 +24,12 @@ class CmAdmin::UserPolicy < ApplicationPolicy
     @user.super_admin?
   end
 
+  def user_import?
+    @user.super_admin?
+  end
+
+  def import?
+    @user.super_admin?
+  end
+
 end
