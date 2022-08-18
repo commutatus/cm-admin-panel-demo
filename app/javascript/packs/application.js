@@ -8,3 +8,5 @@ require("@rails/activestorage").start()
 import jQuery from 'jquery';
 window.$ = jQuery
 window.jQuery = jQuery
+
+var x = a
