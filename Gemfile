@@ -13,7 +13,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'coffee-rails'
 gem 'simple_form'
+
+# Gems required for keeping code clean.
 gem 'rubocop'
+gem 'reek'
+gem 'eslint-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
