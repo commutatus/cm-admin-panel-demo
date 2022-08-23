@@ -25,6 +25,7 @@ jobs:
           reek_version: 6.1.1
       - name: runner / stylelint
         uses: reviewdog/action-stylelint@v1
+        run: npx stylelint
         with:
           reporter: github-pr-check
           stylelint_input: '**/*.scss'
