@@ -4,6 +4,7 @@ module CmAdmin::Assessment
     cm_admin do
       visible_on_sidebar false
       actions only: []
+      
       set_icon "fa fa-user"
       cm_index do
         page_title 'Assessment'

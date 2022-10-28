@@ -1,2 +1,2 @@
-$(document).on 'click', '.menu-item', (e) ->
-  $('.profile-popup').toggleClass('hidden')
+$(document).on 'click', '.menu-item', () ->
+$('.profile-popup').toggleClass('hidden')
