@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_10_065826) do
+ActiveRecord::Schema.define(version: 2022_10_04_054637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+
+  create_table "action_mailbox_inbound_emails", force: :cascade do |t|
+    t.integer "status", default: 0, null: false
+    t.string "message_id", null: false
+    t.string "message_checksum", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_id", "message_checksum"], name: "index_action_mailbox_inbound_emails_uniqueness", unique: true
+  end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +71,35 @@ ActiveRecord::Schema.define(version: 2022_08_10_065826) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["assessable_type", "assessable_id"], name: "index_assessments_on_assessable"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "discount_amount_cents", default: 0
+    t.integer "sub_total_amount_cents"
+    t.integer "total_amount_cents", null: false
+    t.bigint "cart_id", null: false
+    t.string "itemable_type"
+    t.bigint "itemable_id"
+    t.uuid "uuid", default: -> { "uuid_generate_v4()" }, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["itemable_id", "itemable_type"], name: "index_cart_items_on_itemable_id_and_itemable_type"
+    t.index ["itemable_type", "itemable_id"], name: "index_cart_items_on_itemable"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "discount_amount_cents", default: 0
+    t.integer "sub_total_amount_cents"
+    t.integer "total_amount_cents", null: false
+    t.bigint "coupon_id"
+    t.bigint "user_id"
+    t.uuid "uuid", default: -> { "uuid_generate_v4()" }, null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coupon_id"], name: "index_carts_on_coupon_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "chapters", force: :cascade do |t|
@@ -119,9 +158,15 @@ ActiveRecord::Schema.define(version: 2022_08_10_065826) do
   end
 
   create_table "file_imports", force: :cascade do |t|
-    t.string "associated_model_name", null: false
+    t.string "associated_model_name"
+    t.string "added_by_type", null: false
+    t.bigint "added_by_id", null: false
+    t.jsonb "error_report"
+    t.datetime "completed_at"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["added_by_type", "added_by_id"], name: "index_file_imports_on_added_by"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -178,6 +223,9 @@ ActiveRecord::Schema.define(version: 2022_08_10_065826) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "carts", "coupons"
+  add_foreign_key "carts", "users"
   add_foreign_key "chapters", "courses"
   add_foreign_key "coupons", "users"
   add_foreign_key "course_coaches", "courses"

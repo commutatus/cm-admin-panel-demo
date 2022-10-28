@@ -38,14 +38,12 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spotlight_search'
-gem 'kaminari'
 gem 'font-awesome-rails'
 gem "cocoon"
 # gem 'cm-admin', '~> 0.7.6'
 gem 'cm-admin', path: '/Users/anbazhaganpalani/Projects/cm-admin'
+gem 'cm-graphql', path: '/Users/anbazhaganpalani/Projects/template-paging-api'
+gem 'cm-cart', path: '/Users/anbazhaganpalani/Projects/cm-cart'
 gem 'devise'
-gem 'graphql'
-gem 'graphql-errors'
-gem 'graphql-rails_logger'
-gem 'graphiql-rails', group: :development
 gem 'sidekiq'
+gem 'graphiql-rails', group: :development

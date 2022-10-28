@@ -2,6 +2,7 @@ module CmAdmin::User
   extend ActiveSupport::Concern
   included do
     cm_admin do
+      importable class_name: 'ImportUser', importer_type: 'csv_importer'
       actions only: []
       set_icon "fa fa-user"
       cm_index do
@@ -26,12 +27,12 @@ module CmAdmin::User
         column :gender, field_type: :tag
         column :mobile_number
 
-        custom_action name: 'import', route_type: "collection", verb: "post", path: '/import', display_type: :route do
-          allowed_params = params.permit(file_import: [:import_file, :associated_model_name]).to_h
-          file_import_params = allowed_params[:file_import]
-          file_import = FileImport.new(file_import_params).save(validate: false)
-          FileImport.last
-        end
+        # custom_action name: 'import', route_type: "collection", verb: "post", path: '/import', display_type: :route do
+        #   allowed_params = params.permit(file_import: [:import_file, :associated_model_name]).to_h
+        #   file_import_params = allowed_params[:file_import]
+        #   file_import = FileImport.new(file_import_params).save(validate: false)
+        #   FileImport.last
+        # end
 
       end
 
@@ -59,8 +60,9 @@ module CmAdmin::User
         form_field :profile_picture, input_type: :single_file_upload
         form_field :age, input_type: :integer
         form_field :dob, input_type: :date
-        form_field :gender, input_type: :single_select, collection_method: :gender_collection
-        form_field :mobile_number, input_type: :string
+        # To be uncommented once the helper method PR is merged.
+        # form_field :gender, input_type: :single_select, helper_method: :gender_collection
+        # form_field :mobile_number, input_type: :hidden, helper_method: :formatted_mobile_number
       end
 
       cm_edit page_title: 'Add Learner', page_description: 'Enter all details to add learner' do
@@ -70,7 +72,7 @@ module CmAdmin::User
         form_field :profile_picture, input_type: :single_file_upload
         form_field :age, input_type: :integer
         form_field :dob, input_type: :date
-        form_field :gender, input_type: :single_select, collection_method: :gender_collection
+        # form_field :gender, input_type: :single_select, helper_method: :gender_collection
         form_field :mobile_number, input_type: :string
       end
 

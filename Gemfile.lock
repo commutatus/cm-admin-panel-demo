@@ -1,7 +1,7 @@
 PATH
   remote: /Users/anbazhaganpalani/Projects/cm-admin
   specs:
-    cm-admin (0.7.7)
+    cm-admin (0.8.7)
       caxlsx_rails
       cocoon (~> 1.2.15)
       csv-importer (~> 0.8.2)
@@ -10,6 +10,21 @@ PATH
       pundit (~> 2.2.0)
       slim (~> 4.1.0)
       webpacker (~> 5.4.3)
+
+PATH
+  remote: /Users/anbazhaganpalani/Projects/cm-cart
+  specs:
+    cm-cart (0.1.0)
+
+PATH
+  remote: /Users/anbazhaganpalani/Projects/template-paging-api
+  specs:
+    cm-graphql (0.0.1)
+      graphiql-rails (~> 1.8.0)
+      graphql (~> 1.13.1)
+      graphql-errors (~> 0.4.0)
+      graphql-rails_logger (~> 1.2.3)
+      kaminari (~> 1.2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -142,7 +157,7 @@ GEM
     graphiql-rails (1.8.0)
       railties
       sprockets-rails
-    graphql (1.13.1)
+    graphql (1.13.16)
     graphql-errors (0.4.0)
       graphql (>= 1.6.0, < 2)
     graphql-rails_logger (1.2.3)
@@ -253,7 +268,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
-    rouge (3.26.1)
+    rouge (3.30.0)
     rubocop (1.30.1)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -351,17 +366,15 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cm-admin!
+  cm-cart!
+  cm-graphql!
   cocoon
   coffee-rails
   devise
   eslint-rails
   font-awesome-rails
   graphiql-rails
-  graphql
-  graphql-errors
-  graphql-rails_logger
   jbuilder (~> 2.7)
-  kaminari
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
