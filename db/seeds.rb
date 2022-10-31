@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+puts "== Seeding user =="
+begin
+  Fabricate.times(100, :user)
+rescue => exception
+  puts "Error while creating user - #{exception.message}"
+end
+
+
+puts "== Seeding course, chapter, assessment, lesson =="
+begin
+  Fabricate.times(100, :course)
+rescue => exception
+  puts "Error while creating user - #{exception.message}"
+end
