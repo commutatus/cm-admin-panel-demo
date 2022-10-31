@@ -149,6 +149,9 @@ GEM
       execjs
       railties (>= 3.2)
     execjs (2.8.1)
+    fabrication (2.30.0)
+    faker (2.22.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
@@ -372,6 +375,8 @@ DEPENDENCIES
   coffee-rails
   devise
   eslint-rails
+  fabrication
+  faker
   font-awesome-rails
   graphiql-rails
   jbuilder (~> 2.7)
