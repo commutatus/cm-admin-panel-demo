@@ -32,4 +32,8 @@ class CmAdmin::UserPolicy < ApplicationPolicy
     @user.super_admin?
   end
 
+  def educational_details?
+    @user.super_admin?
+  end  
+
 end

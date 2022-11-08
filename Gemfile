@@ -42,7 +42,7 @@ gem 'kaminari'
 gem 'font-awesome-rails'
 gem "cocoon"
 # gem 'cm-admin', '~> 0.7.6'
-gem 'cm-admin', path: '/Users/anbazhaganpalani/Projects/cm-admin'
+gem 'cm-admin', path: '/home/viveck/cwork/cm-admin'
 gem 'devise'
 gem 'graphql'
 gem 'graphql-errors'

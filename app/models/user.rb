@@ -5,8 +5,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-    has_many :educational_details, inverse_of: :user
-    accepts_nested_attributes_for :educational_details, reject_if: :all_blank, allow_destroy: true
+  has_many :educational_details, inverse_of: :user
+  has_many :coupons
+  accepts_nested_attributes_for :educational_details, reject_if: :all_blank, allow_destroy: true
 
   has_one_attached :profile_picture
 

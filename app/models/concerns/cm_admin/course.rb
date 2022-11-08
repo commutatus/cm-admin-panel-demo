@@ -12,7 +12,7 @@ module CmAdmin
           filter [:title], :search, placeholder: 'Search'
 
           column :title
-          column :description
+          column :description, field_type: :drawer, drawer_partial: "/cm_admin_demo/drawer"
           column :created_at, field_type: :datetime, format: "%b %d, %Y %H:%M:%S"
         end
 

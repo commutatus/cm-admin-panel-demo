@@ -8,7 +8,7 @@ module CmAdmin::User
         page_title 'User'
         page_description 'Manage all users here'
 
-        filter [:first_name, :last_name, :email], :search, placeholder: 'Search'
+        filter [:first_name, :last_name, :email, {educational_details: [:institution], coupons: [:title]}], :search, placeholder: 'Search'
         filter :age, :range, placeholder: 'User age'
         filter :dob, :date, placeholder: 'Birthday'
         filter :gender, :single_select,
@@ -49,6 +49,10 @@ module CmAdmin::User
         end
         tab :dsl, 'user_dsl', layout_type: 'cm_association_show', partial: '/cm_admin_demo/users/dsl'
         tab :import, 'user_import', layout_type: 'cm_association_show', partial: '/cm_admin_demo/users/import'
+        tab :educational_details, 'educational_details', associated_model: :educational_details, layout_type: 'cm_association_index' do
+          column :id
+          column :description, field_type: :drawer, drawer_partial: "/cm_admin_demo/drawer"
+        end      
       end
 
       cm_new page_title: 'Add Learner', page_description: 'Enter all details to add learner' do
@@ -59,7 +63,7 @@ module CmAdmin::User
         form_field :profile_picture, input_type: :single_file_upload
         form_field :age, input_type: :integer
         form_field :dob, input_type: :date
-        form_field :gender, input_type: :single_select, collection_method: :gender_collection
+        form_field :gender, input_type: :single_select, collection: :gender_collection
         form_field :mobile_number, input_type: :string
       end
 
@@ -70,7 +74,7 @@ module CmAdmin::User
         form_field :profile_picture, input_type: :single_file_upload
         form_field :age, input_type: :integer
         form_field :dob, input_type: :date
-        form_field :gender, input_type: :single_select, collection_method: :gender_collection
+        form_field :gender, input_type: :single_select, collection: :gender_collection
         form_field :mobile_number, input_type: :string
       end
 
