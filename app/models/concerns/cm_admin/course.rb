@@ -5,6 +5,7 @@ module CmAdmin
       cm_admin do
         actions only: []
         set_icon 'fa fa-user'
+        permit_additional_fields [:seo_keywords]
         cm_index do
           page_title 'Course'
           page_description 'Manage all courses here'
@@ -44,6 +45,7 @@ module CmAdmin
         cm_new page_title: 'Add Course', page_description: 'Enter all details to add course' do
           form_field :title, input_type: :string
           form_field :description, input_type: :string
+          form_field :seo_keywords, input_type: :string
         end
 
         cm_edit page_title: 'Edit Course', page_description: 'Enter all details to edit course' do

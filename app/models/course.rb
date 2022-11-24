@@ -6,6 +6,8 @@ class Course < ApplicationRecord
   has_many :assessments, as: :assessable
   has_one :course_detail
 
+  store_accessor :meta_data, :seo_keywords
+
   enum level: { beginner: 0, intermediate: 1, advanced: 2 }
 
   scope :only_beginner, lambda {

@@ -3,6 +3,7 @@ module CmAdmin::User
   included do
     cm_admin do
       importable class_name: 'ImportUser', importer_type: 'csv_importer'
+      permit_additional_fields [:password]
       actions only: []
       set_icon "fa fa-user"
       cm_index do

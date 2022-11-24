@@ -1,7 +1,6 @@
 require_relative 'boot'
 
 require 'rails/all'
-require 'cm_admin'
 require 'cm-graphql'
 require 'cm-cart'
 
