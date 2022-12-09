@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_24_040351) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_091428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
@@ -144,6 +144,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_040351) do
     t.datetime "updated_at", null: false
     t.integer "level", default: 0
     t.jsonb "meta_data"
+    t.integer "price_cents"
   end
 
   create_table "educational_details", force: :cascade do |t|

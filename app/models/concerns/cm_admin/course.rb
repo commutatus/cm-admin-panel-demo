@@ -5,7 +5,6 @@ module CmAdmin
       cm_admin do
         actions only: []
         set_icon 'fa fa-user'
-        permit_additional_fields [:seo_keywords]
         cm_index do
           page_title 'Course'
           page_description 'Manage all courses here'
@@ -46,11 +45,28 @@ module CmAdmin
           form_field :title, input_type: :string
           form_field :description, input_type: :string
           form_field :seo_keywords, input_type: :string
+          form_field :price, input_type: :integer
+          nested_form_field :chapters do
+            form_field :title, input_type: :string
+            form_field :description, input_type: :string
+          end
+          nested_form_field :course_coaches do
+            form_field :user_id, input_type: :single_select, collection: ::User.all.order(:first_name).map { |user| [user.first_name, user.id] }
+          end
         end
 
         cm_edit page_title: 'Edit Course', page_description: 'Enter all details to edit course' do
           form_field :title, input_type: :string
           form_field :description, input_type: :string
+          form_field :seo_keywords, input_type: :string
+          form_field :price, input_type: :integer
+          nested_form_field :chapters do
+            form_field :title, input_type: :string
+            form_field :description, input_type: :string
+          end
+          nested_form_field :course_coaches do
+            form_field :user_id, input_type: :single_select, collection: ::User.all.order(:first_name).map { |user| [user.first_name, user.id] }
+          end
         end
       end
     end

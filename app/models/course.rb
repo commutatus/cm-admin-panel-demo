@@ -6,9 +6,14 @@ class Course < ApplicationRecord
   has_many :assessments, as: :assessable
   has_one :course_detail
 
+  monetize :price_cents
+
   store_accessor :meta_data, :seo_keywords
 
   enum level: { beginner: 0, intermediate: 1, advanced: 2 }
+
+  accepts_nested_attributes_for :chapters, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :course_coaches, reject_if: :all_blank, allow_destroy: true
 
   scope :only_beginner, lambda {
     where(level: :beginner)
