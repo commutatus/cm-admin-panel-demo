@@ -9,7 +9,7 @@ module CmAdmin
           page_title 'Course'
           page_description 'Manage all courses here'
 
-          filter [:title], :search, placeholder: 'Search'
+          filter [:title, {chapters: [:title]}], :search, placeholder: 'Search'
 
           column :title
           column :description

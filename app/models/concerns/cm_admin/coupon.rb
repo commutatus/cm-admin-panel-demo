@@ -9,6 +9,19 @@ module CmAdmin::Coupon
         page_description 'Manage all Coupon here'
 
         column :title
+        column :status, header: 'Status'
+
+        custom_action name: 'activate', route_type: "member", verb: "post", path: ':id/activate', display_type: :button, display_if: ->(coupon) { coupon.disabled? } do
+          coupon = ::Coupon.find(params[:id])
+          coupon.activate
+          coupon
+        end
+
+        custom_action name: 'deactivate', route_type: "member", verb: "post", path: ':id/deactivate', display_type: :button, display_if: ->(coupon) { coupon.enabled? } do
+          coupon = ::Coupon.find(params[:id])
+          coupon.deactivate
+          coupon
+        end
 
       end
 
