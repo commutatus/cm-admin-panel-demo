@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  otp: MyString
+  expired_at: 2022-12-14 13:13:09
+  status: 1
+  verified_at: 2022-12-14 13:13:09
+  user: one
+
+two:
+  otp: MyString
+  expired_at: 2022-12-14 13:13:09
+  status: 1
+  verified_at: 2022-12-14 13:13:09
+  user: two

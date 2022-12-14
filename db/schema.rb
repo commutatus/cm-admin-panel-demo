@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_14_061100) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_14_074309) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
@@ -60,6 +60,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_061100) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string "access_token"
+    t.datetime "expires_at"
+    t.boolean "active"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_api_keys_on_user_id"
   end
 
   create_table "assessments", force: :cascade do |t|
@@ -190,6 +200,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_061100) do
     t.index ["loggable_type", "loggable_id"], name: "index_logs_on_loggable"
   end
 
+  create_table "otp_requests", force: :cascade do |t|
+    t.string "otp"
+    t.datetime "expired_at"
+    t.integer "status"
+    t.datetime "verified_at"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_otp_requests_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "price_cents"
@@ -226,6 +247,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_061100) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "api_keys", "users"
   add_foreign_key "cart_items", "carts"
   add_foreign_key "carts", "coupons"
   add_foreign_key "carts", "users"
@@ -236,4 +258,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_061100) do
   add_foreign_key "course_details", "courses"
   add_foreign_key "educational_details", "users"
   add_foreign_key "lessons", "chapters"
+  add_foreign_key "otp_requests", "users"
 end
