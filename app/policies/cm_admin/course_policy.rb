@@ -21,6 +21,10 @@ class CmAdmin::CoursePolicy < ApplicationPolicy
     @user.super_admin?
   end
 
+  def history?
+    @user.super_admin?
+  end
+
   def chapters?
     show?
   end

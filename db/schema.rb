@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_14_074309) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_05_110512) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
@@ -32,6 +32,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_074309) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "action_trails", force: :cascade do |t|
+    t.string "entity_type"
+    t.integer "entity_id"
+    t.integer "trail_type"
+    t.string "event_name", null: false
+    t.integer "actor_id"
+    t.jsonb "entity_changes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -128,6 +139,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_074309) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0, null: false
+    t.boolean "is_active", default: false
     t.index ["user_id"], name: "index_coupons_on_user_id"
   end
 
@@ -219,6 +231,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_074309) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.integer "total_amount_cents", null: false
+    t.integer "status", default: 0
+    t.datetime "completed_at", precision: nil
+    t.string "rzp_order_id", null: false
+    t.bigint "cart_id", null: false
+    t.bigint "user_id", null: false
+    t.string "mode_of_payment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_transactions_on_cart_id"
+    t.index ["status"], name: "index_transactions_on_status"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.datetime "created_at", null: false
@@ -259,4 +286,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_074309) do
   add_foreign_key "educational_details", "users"
   add_foreign_key "lessons", "chapters"
   add_foreign_key "otp_requests", "users"
+  add_foreign_key "transactions", "carts"
+  add_foreign_key "transactions", "users"
 end

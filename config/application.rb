@@ -3,6 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 require 'cm-graphql'
 require 'cm-cart'
+require 'cm-action-trail'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

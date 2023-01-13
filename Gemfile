@@ -25,6 +25,8 @@ gem "cocoon", '~> 1.2.15'
 gem 'cm-admin', path: '../cm-admin'
 gem 'cm-graphql', path: '../template-paging-api'
 gem 'cm-cart', path: '../cm-cart'
+gem 'cm-pay', path: '../cm-pay'
+gem 'cm-action-trail', path: '../cm-action-trail'
 gem 'devise', '~> 4.8.1'
 gem 'sidekiq', '~> 6.0.7'
 

@@ -1,5 +1,8 @@
 class Course < ApplicationRecord
   include CmAdmin::Course
+
+  has_action_trail
+
   has_many :chapters
   has_many :course_coaches
   has_many :coaches, through: :course_coaches, source: :user
