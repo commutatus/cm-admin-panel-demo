@@ -12,5 +12,21 @@ module CmAdmin
     def formatted_mobile_number
       "9677118767"
     end
+
+    def location_type_collection(record, field)
+      ::Location.location_types.map {|key, val| [key.titleize, key]}
+    end
+
+    def parent_location_collection(record, field)
+      ::Location.all.map {|location| [location.name, location.id]}
+    end
+
+    def country_collection(record, field)
+      ::Location.country.map {|location| [location.name, location.id]}
+    end
+
+    def product_collection(record, field)
+      ::Product.all.map {|product| [product.name, product.id]}
+    end
   end
 end

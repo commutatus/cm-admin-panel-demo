@@ -5,6 +5,14 @@ class CmAdmin::ProductPolicy < ApplicationPolicy
     @user.super_admin?
   end
 
+  def new?
+    @user.super_admin?
+  end
+
+  def create?
+    @user.super_admin?
+  end
+
   def create_product?
     @user.super_admin?
   end

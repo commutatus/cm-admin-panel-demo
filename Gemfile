@@ -43,9 +43,9 @@ gem 'spotlight_search'
 gem 'font-awesome-rails'
 gem "cocoon"
 # gem 'cm-admin', '~> 0.7.6'
-gem 'cm-admin', path: '/Users/anbazhaganpalani/Projects/cm-admin'
-gem 'cm-graphql', path: '/Users/anbazhaganpalani/Projects/template-paging-api'
-gem 'cm-cart', path: '/Users/anbazhaganpalani/Projects/cm-cart'
+gem 'cm-admin', path: '../cm-admin'
+gem 'cm-graphql', path: '../template-paging-api'
+gem 'cm-cart', path: '../cm-cart'
 gem 'devise'
 gem 'sidekiq'
 gem 'graphiql-rails', group: :development
