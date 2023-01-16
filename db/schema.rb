@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_04_054637) do
+ActiveRecord::Schema.define(version: 2023_01_16_092830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "action_trails", force: :cascade do |t|
+    t.string "entity_type"
+    t.integer "entity_id"
+    t.integer "trail_type"
+    t.string "event_name", null: false
+    t.integer "actor_id"
+    t.jsonb "entity_changes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -61,6 +72,26 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "street_name"
+    t.integer "country_id"
+    t.integer "state_id"
+    t.integer "city_id"
+    t.string "pincode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string "access_token"
+    t.datetime "expires_at", precision: 6
+    t.boolean "active"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_api_keys_on_user_id"
   end
 
   create_table "assessments", force: :cascade do |t|
@@ -92,6 +123,7 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
     t.integer "discount_amount_cents", default: 0
     t.integer "sub_total_amount_cents"
     t.integer "total_amount_cents", null: false
+    t.integer "tax_amount_cents", default: 0
     t.bigint "coupon_id"
     t.bigint "user_id"
     t.uuid "uuid", default: -> { "uuid_generate_v4()" }, null: false
@@ -117,6 +149,8 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0, null: false
+    t.boolean "is_active", default: false
     t.index ["user_id"], name: "index_coupons_on_user_id"
   end
 
@@ -144,6 +178,8 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "level", default: 0
+    t.jsonb "meta_data"
+    t.integer "price_cents"
   end
 
   create_table "educational_details", force: :cascade do |t|
@@ -178,6 +214,14 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
     t.index ["chapter_id"], name: "index_lessons_on_chapter_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.integer "location_type"
+    t.integer "parent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "logs", force: :cascade do |t|
     t.string "loggable_type", null: false
     t.bigint "loggable_id", null: false
@@ -187,12 +231,49 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
     t.index ["loggable_type", "loggable_id"], name: "index_logs_on_loggable"
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "total_amount_cents"
+    t.bigint "product_id", null: false
+    t.integer "product_price_cents"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_order_items_on_product_id"
+  end
+
+  create_table "otp_requests", force: :cascade do |t|
+    t.string "otp"
+    t.datetime "expired_at", precision: 6
+    t.integer "status"
+    t.datetime "verified_at", precision: 6
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_otp_requests_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "price_cents"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "display_review"
+    t.integer "review_count"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "total_amount_cents", null: false
+    t.integer "status", default: 0
+    t.datetime "completed_at"
+    t.string "rzp_order_id", null: false
+    t.bigint "cart_id", null: false
+    t.bigint "user_id", null: false
+    t.string "mode_of_payment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_transactions_on_cart_id"
+    t.index ["status"], name: "index_transactions_on_status"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -223,6 +304,7 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "api_keys", "users"
   add_foreign_key "cart_items", "carts"
   add_foreign_key "carts", "coupons"
   add_foreign_key "carts", "users"
@@ -233,4 +315,8 @@ ActiveRecord::Schema.define(version: 2022_10_04_054637) do
   add_foreign_key "course_details", "courses"
   add_foreign_key "educational_details", "users"
   add_foreign_key "lessons", "chapters"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "otp_requests", "users"
+  add_foreign_key "transactions", "carts"
+  add_foreign_key "transactions", "users"
 end
