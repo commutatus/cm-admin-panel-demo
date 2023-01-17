@@ -20,5 +20,13 @@ class CmAdmin::ProductPolicy < ApplicationPolicy
   def show?
     index?
   end
+
+  def edit?
+    index?
+  end
+
+  def update?
+    index?
+  end
   
 end
