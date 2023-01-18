@@ -39,7 +39,8 @@ module CmAdmin::OrderItem
       end
 
       cm_new page_title: 'Add order_item', page_description: 'Enter all details to add order_item' do
-        form_field :product_id, input_type: :single_select, helper_method: :product_collection, target: { action_name: :fetch_product_details }
+        # Uncomment below field once the linked field PR is merged
+        # form_field :product_id, input_type: :single_select, helper_method: :product_collection, target: { action_name: :fetch_product_details }
         form_field :product_price, input_type: :string
       end
 

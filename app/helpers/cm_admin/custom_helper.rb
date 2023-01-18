@@ -28,5 +28,9 @@ module CmAdmin
     def product_collection(record, field)
       ::Product.all.map {|product| [product.name, product.id]}
     end
+
+    def product_type_collection(record, field)
+      [['Ring', 'ring'], ['Earring', 'earring'], ['Necklace', 'necklace'], ['Bracelet', 'bracelet'], ['Bangle', 'bangle'], ['Pendant', 'pendant'], ['Chain', 'chain'], ['Other', 'other']]
+    end
   end
 end
