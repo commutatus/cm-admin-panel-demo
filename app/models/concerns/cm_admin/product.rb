@@ -17,6 +17,21 @@ module CmAdmin::Product
         #   # Logic to be added
         #   Current.user.logs
         # end
+
+        custom_action name: 'toggle_review_count', route_type: 'collection', verb: 'get', path: ':product_id/toggle_review_count', display_type: :route do
+          {
+            fields: [
+              {
+                target_type: :toggle_visibility,
+                target_value: {
+                  table: 'product',
+                  field_name: 'review_count',
+                  field_value: ''
+                }
+              }
+            ]
+          }
+        end
       end
       cm_show page_title: :name do
         tab :profile, '' do
@@ -32,7 +47,7 @@ module CmAdmin::Product
         form_field :name, input_type: :string
         form_field :price, input_type: :string
         form_field :description, input_type: :string
-        form_field :display_review, input_type: :check_box
+        form_field :display_review, input_type: :check_box, target: { action_name: :toggle_review_count }
         form_field :review_count, input_type: :integer
         form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
       end

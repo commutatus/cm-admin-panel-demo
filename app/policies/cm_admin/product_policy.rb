@@ -28,5 +28,9 @@ class CmAdmin::ProductPolicy < ApplicationPolicy
   def update?
     index?
   end
+
+  def toggle_review_count?
+    index?
+  end
   
 end
