@@ -61,7 +61,7 @@ module CmAdmin::Address
         form_field :country_id, input_type: :single_select, helper_method: :country_collection, target: { action_name: :country_associated_states }
         form_field :state_id, input_type: :single_select, target: { action_name: :state_associated_cities }
         form_field :city_id, input_type: :single_select
-        form_field :parent_id, input_type: :single_select, helper_method: :parent_address_collection
+        # form_field :parent_id, input_type: :single_select, helper_method: :parent_location_collection
       end
 
       cm_edit page_title: 'Edit address', page_description: 'Enter all details to edit address' do
