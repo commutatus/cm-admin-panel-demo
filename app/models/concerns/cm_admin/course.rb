@@ -46,7 +46,7 @@ module CmAdmin
           form_field :description, input_type: :string
           form_field :seo_keywords, input_type: :string
           form_field :price, input_type: :integer
-          form_field :level, input_type: :radio_button, helper_method: :course_level_map
+          # form_field :level, input_type: :radio_button, helper_method: :course_level_map
           nested_form_field :chapters do
             form_field :title, input_type: :string
             form_field :description, input_type: :string

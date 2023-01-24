@@ -36,7 +36,7 @@ module CmAdmin::Coupon
       cm_new page_title: 'Add Coupon', page_description: 'Enter all details to add Coupon' do
         form_field :title, input_type: :string
         form_field :discount_amount_cents, input_type: :string
-        form_field :is_active, input_type: :check_box
+        # form_field :is_active, input_type: :check_box
       end
 
       cm_edit page_title: 'Edit Coupon', page_description: 'Enter all details to edit Coupon' do
