@@ -10,7 +10,7 @@ module CmAdmin::Address
 
         column :street_name
 
-        custom_action name: 'country_associated_states', route_type: 'collection', verb: 'get', path: ':country_id/states', display_type: :route do
+        custom_action name: 'country_associated_states', route_type: 'collection', verb: 'get', path: 'get_states', display_type: :route do
           allowed_params = params.permit(:country_id).to_h
           country_id = allowed_params[:country_id]
           states = Location.where(parent_id: country_id).map{ |state| [state.name, state.id] }
@@ -28,7 +28,7 @@ module CmAdmin::Address
           }
         end
 
-        custom_action name: 'state_associated_cities', route_type: 'collection', verb: 'get', path: ':state_id/cities', display_type: :route do
+        custom_action name: 'state_associated_cities', route_type: 'collection', verb: 'get', path: 'list/cities', display_type: :route do
           allowed_params = params.permit(:state_id).to_h
           state_id = allowed_params[:state_id]
           cities = Location.where(parent_id: state_id).map{ |city| [city.name, city.id] }
