@@ -18,7 +18,7 @@ module CmAdmin::Product
         #   Current.user.logs
         # end
 
-        custom_action name: 'toggle_review_count', route_type: 'collection', verb: 'get', path: ':product_id/toggle_review_count', display_type: :route do
+        custom_action name: 'toggle_review_count', route_type: 'collection', verb: 'get', path: 'toggle/review_count', display_type: :route do
           {
             fields: [
               {
