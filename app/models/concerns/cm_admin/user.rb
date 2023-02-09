@@ -53,27 +53,38 @@ module CmAdmin::User
       end
 
       cm_new page_title: 'Add Learner', page_description: 'Enter all details to add learner' do
-        form_field :first_name, input_type: :string
-        form_field :last_name, input_type: :string
-        form_field :email, input_type: :string
-        form_field :password, input_type: :string
-        form_field :profile_picture, input_type: :single_file_upload
-        form_field :age, input_type: :integer
-        form_field :dob, input_type: :date
-        # To be uncommented once the helper method PR is merged.
-        # form_field :gender, input_type: :single_select, helper_method: :gender_collection
-        # form_field :mobile_number, input_type: :hidden, helper_method: :formatted_mobile_number
+        cm_section 'User Details' do
+          form_field :first_name, input_type: :string
+          form_field :last_name, input_type: :string
+          form_field :email, input_type: :string
+          form_field :password, input_type: :string
+          form_field :profile_picture, input_type: :single_file_upload
+          # To be uncommented once the helper method PR is merged.
+          # form_field :gender, input_type: :single_select, helper_method: :gender_collection
+          # form_field :mobile_number, input_type: :hidden, helper_method: :formatted_mobile_number
+        end
+        cm_section 'Educational Details' do
+          form_field :age, input_type: :integer
+          form_field :dob, input_type: :date
+          nested_form_field :educational_details do
+            form_field :institution, input_type: :string
+            form_field :address_line1, input_type: :string
+            form_field :address_line2, input_type: :string
+          end
+        end
       end
 
       cm_edit page_title: 'Add Learner', page_description: 'Enter all details to add learner' do
-        form_field :first_name, input_type: :string
-        form_field :last_name, input_type: :string
-        form_field :email, input_type: :string
-        form_field :profile_picture, input_type: :single_file_upload
-        form_field :age, input_type: :integer
-        form_field :dob, input_type: :date
-        # form_field :gender, input_type: :single_select, helper_method: :gender_collection
-        form_field :mobile_number, input_type: :string
+        cm_section 'User Details' do
+          form_field :first_name, input_type: :string
+          form_field :last_name, input_type: :string
+          form_field :email, input_type: :string
+          form_field :profile_picture, input_type: :single_file_upload
+          form_field :age, input_type: :integer
+          form_field :dob, input_type: :date
+          # form_field :gender, input_type: :single_select, helper_method: :gender_collection
+          form_field :mobile_number, input_type: :string
+        end
       end
 
     end

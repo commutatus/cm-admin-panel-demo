@@ -4,6 +4,7 @@ module CmAdmin::Product
     cm_admin  do
       actions only: []
       cm_index page_title: 'Products', page_description: 'Manage all products here', partial: '/admin/products/index' do
+        # scope_list [:with_review_count]
         custom_action name: 'create_product', route_type: "collection", verb: "post", path: '/create', display_type: :modal, partial: '/admin/products/create_modal' do
           allowed_params = params.permit(product: :name).to_h
           product_params = allowed_params[:product]
@@ -35,7 +36,7 @@ module CmAdmin::Product
       end
       cm_show page_title: :name do
         tab :profile, '' do
-          cm_show_section 'Product details' do
+          cm_section 'Product details' do
             field :name
             field :description
           end
@@ -44,21 +45,27 @@ module CmAdmin::Product
 
 
       cm_new page_title: 'Add product', page_description: 'Enter product details' do
-        form_field :name, input_type: :string
-        form_field :price, input_type: :string
-        form_field :description, input_type: :string
-        form_field :display_review, input_type: :check_box, target: { action_name: :toggle_review_count }
-        form_field :review_count, input_type: :integer
-        form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        cm_section 'Product details' do
+          form_field :name, input_type: :string
+          form_field :price, input_type: :string
+          form_field :description, input_type: :string
+          form_field :display_review, input_type: :check_box, target: { action_name: :toggle_review_count }
+          form_field :review_count, input_type: :integer
+        end
+        cm_section 'Product type list' do
+          form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        end
       end
 
       cm_edit page_title: 'Edit product', page_description: 'Enter product details' do
-        form_field :name, input_type: :string
-        form_field :price, input_type: :string
-        form_field :description, input_type: :string
-        form_field :display_review, input_type: :check_box
-        form_field :review_count, input_type: :integer
-        form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        cm_section 'Product details' do
+          form_field :name, input_type: :string
+          form_field :price, input_type: :string
+          form_field :description, input_type: :string
+          form_field :display_review, input_type: :check_box
+          form_field :review_count, input_type: :integer
+          form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        end
       end
     end
   end

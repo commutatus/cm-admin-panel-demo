@@ -23,14 +23,18 @@ module CmAdmin::Location
       end
 
       cm_new page_title: 'Add location', page_description: 'Enter all details to add location' do
-        form_field :name, input_type: :string
-        form_field :location_type, input_type: :single_select, helper_method: :location_type_collection
-        form_field :parent_id, input_type: :single_select, helper_method: :parent_location_collection
+        cm_section 'Assessment Details' do
+          form_field :name, input_type: :string
+          form_field :location_type, input_type: :single_select, helper_method: :location_type_collection
+          form_field :parent_id, input_type: :single_select, helper_method: :parent_location_collection
+        end
       end
 
       cm_edit page_title: 'Edit location', page_description: 'Enter all details to edit location' do
-        form_field :name, input_type: :string
-        form_field :location_type, input_type: :string
+        cm_section 'Assessment Details' do
+          form_field :name, input_type: :string
+          form_field :location_type, input_type: :string
+        end
       end
     end
   end
