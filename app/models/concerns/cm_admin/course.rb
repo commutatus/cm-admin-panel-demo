@@ -17,6 +17,7 @@ module CmAdmin
         end
 
         cm_show page_title: :title do
+          # field :title
           tab :profile, '' do
             cm_show_section 'User details' do
               field :title
@@ -29,6 +30,7 @@ module CmAdmin
             end
           end
           tab :chapters, 'chapters', associated_model: :chapters, layout_type: 'cm_association_index' do
+            # scope_list [:created_this_year]
             column :title, header: 'Title'
             column :description, header: 'Description'
           end
@@ -42,13 +44,17 @@ module CmAdmin
         end
 
         cm_new page_title: 'Add Course', page_description: 'Enter all details to add course' do
-          form_field :title, input_type: :string
-          form_field :description, input_type: :string
+          cm_section 'Course details' do
+            form_field :title, input_type: :string
+            form_field :description, input_type: :string
+          end
         end
 
         cm_edit page_title: 'Edit Course', page_description: 'Enter all details to edit course' do
-          form_field :title, input_type: :string
-          form_field :description, input_type: :string
+          cm_section 'Course Details' do
+            # form_field :title, input_type: :string
+            # form_field :description, input_type: :string
+          end
         end
       end
     end

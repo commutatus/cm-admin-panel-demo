@@ -21,13 +21,17 @@ module CmAdmin::Coupon
       end
 
       cm_new page_title: 'Add Coupon', page_description: 'Enter all details to add Coupon' do
-        form_field :title, input_type: :string
-        form_field :discount_amount_cents, input_type: :string
+        cm_section 'Coupon Details' do
+          form_field :title, input_type: :string
+          form_field :discount_amount_cents, input_type: :string
+        end
       end
 
       cm_edit page_title: 'Edit Coupon', page_description: 'Enter all details to edit Coupon' do
-        form_field :title, input_type: :string
-        form_field :discount_amount_cents, input_type: :string
+        cm_section 'Coupon Details' do
+          form_field :title, input_type: :string
+          form_field :discount_amount_cents, input_type: :string
+        end
       end
     end
   end

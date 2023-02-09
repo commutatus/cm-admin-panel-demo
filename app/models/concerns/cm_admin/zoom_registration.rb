@@ -26,17 +26,21 @@ module CmAdmin::ZoomRegistration
       end
       
       cm_new page_title: 'Add Zoom', page_description: 'Enter all details to add zoom' do
-        form_field :zoom_id, input_type: :string
-        form_field :registrant_name, input_type: :string
-        form_field :cover_image, input_type: :single_file_upload
-        form_field :body_text, input_type: :rich_text
+        cm_section 'Zoom Details' do
+          form_field :zoom_id, input_type: :string
+          form_field :registrant_name, input_type: :string
+          form_field :cover_image, input_type: :single_file_upload
+          form_field :body_text, input_type: :rich_text
+        end
       end
 
       cm_edit page_title: 'Edit Zoom', page_description: 'Enter all details to edit zoom' do
-        form_field :zoom_id, input_type: :string
-        form_field :registrant_name, input_type: :string
-        form_field :cover_image, input_type: :single_file_upload
-        form_field :body_text, input_type: :rich_text
+        cm_section 'Zoom Details' do
+          form_field :zoom_id, input_type: :string
+          form_field :registrant_name, input_type: :string
+          form_field :cover_image, input_type: :single_file_upload
+          form_field :body_text, input_type: :rich_text
+        end
       end
     end
   end

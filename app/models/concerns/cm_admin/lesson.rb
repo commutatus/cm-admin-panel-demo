@@ -25,13 +25,17 @@ module CmAdmin::Lesson
       end
 
       cm_new page_title: 'Add Lesson', page_description: 'Enter all details to add lesson' do
-        form_field :title, input_type: :string
-        form_field :description, input_type: :string
+        cm_section 'Lesson Details' do
+          form_field :title, input_type: :string
+          form_field :description, input_type: :string
+        end
       end
 
       cm_edit page_title: 'Edit Lesson', page_description: 'Enter all details to edit lesson' do
-        form_field :title, input_type: :string
-        form_field :description, input_type: :string
+        cm_section 'Lesson Details' do
+          form_field :title, input_type: :string
+          form_field :description, input_type: :string
+        end
       end
     end
   end
