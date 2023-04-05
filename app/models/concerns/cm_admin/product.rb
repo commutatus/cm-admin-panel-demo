@@ -29,21 +29,25 @@ module CmAdmin::Product
 
 
       cm_new page_title: 'Add product', page_description: 'Enter product details' do
-        form_field :name, input_type: :string
-        form_field :price, input_type: :string
-        form_field :description, input_type: :string
-        form_field :display_review, input_type: :check_box
-        form_field :review_count, input_type: :integer
-        form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        cm_section 'Add product details' do
+          form_field :name, input_type: :string
+          form_field :price, input_type: :string
+          form_field :description, input_type: :string
+          form_field :display_review, input_type: :check_box
+          form_field :review_count, input_type: :integer
+          form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        end
       end
 
       cm_edit page_title: 'Edit product', page_description: 'Enter product details' do
-        form_field :name, input_type: :string
-        form_field :price, input_type: :string
-        form_field :description, input_type: :string
-        form_field :display_review, input_type: :check_box
-        form_field :review_count, input_type: :integer
-        form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        cm_section 'Edit product details' do
+          form_field :name, input_type: :string
+          form_field :price, input_type: :string
+          form_field :description, input_type: :string
+          form_field :display_review, input_type: :check_box
+          form_field :review_count, input_type: :integer
+          form_field :product_type, input_type: :check_box, helper_method: :product_type_collection
+        end
       end
     end
   end

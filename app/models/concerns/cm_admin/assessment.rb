@@ -25,13 +25,17 @@ module CmAdmin::Assessment
       end
 
       cm_new page_title: 'Add Assessment', page_description: 'Enter all details to add Assessment' do
-        form_field :title, input_type: :string
-        form_field :description, input_type: :string
+        cm_section 'Add assessment details' do
+          form_field :title, input_type: :string
+          form_field :description, input_type: :string
+        end
       end
 
       cm_edit page_title: 'Edit Assessment', page_description: 'Enter all details to edit Assessment' do
-        form_field :title, input_type: :string
-        form_field :description, input_type: :string
+        cm_section 'Edit assessment details' do
+          form_field :title, input_type: :string
+          form_field :description, input_type: :string
+        end
       end
     end
   end

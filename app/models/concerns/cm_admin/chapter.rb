@@ -31,13 +31,17 @@ module CmAdmin::Chapter
       end
 
       cm_new page_title: 'Add Chapter', page_description: 'Enter all details to add chapter' do
-        form_field :title, input_type: :string
-        form_field :description, input_type: :string
+        cm_section 'Add chapter details' do
+          form_field :title, input_type: :string
+          form_field :description, input_type: :string
+        end
       end
 
       cm_edit page_title: 'Edit Chapter', page_description: 'Enter all details to edit chapter' do
-        form_field :title, input_type: :string
-        form_field :description, input_type: :string
+        cm_section 'Edit Chapter details' do
+          form_field :title, input_type: :string
+          form_field :description, input_type: :string
+        end
       end
     end
   end

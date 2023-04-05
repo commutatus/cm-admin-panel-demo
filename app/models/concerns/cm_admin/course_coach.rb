@@ -24,14 +24,18 @@ module CmAdmin::CourseCoach
       end
 
       cm_new page_title: 'Add CourseCoach', page_description: 'Enter all details to add CourseCoach' do
-        form_field :user_id, input_type: :string
-        # form_field :course_id, input_type: :single_select, label: 'Access level', collection: Course.only_beginner.map {|course| [course.title, course.id]}
-        # form_field :description, input_type: :string
+        cm_section 'Add coach details' do
+          form_field :user_id, input_type: :string
+          # form_field :course_id, input_type: :single_select, label: 'Access level', collection: Course.only_beginner.map {|course| [course.title, course.id]}
+          # form_field :description, input_type: :string
+        end
       end
 
       cm_edit page_title: 'Edit CourseCoach', page_description: 'Enter all details to edit CourseCoach' do
-        form_field :title, input_type: :string
-        form_field :description, input_type: :string
+        cm_section 'Edit Coach details' do
+          form_field :title, input_type: :string
+          form_field :description, input_type: :string
+        end
       end
     end
   end

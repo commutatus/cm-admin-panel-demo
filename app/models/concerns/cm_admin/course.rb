@@ -11,6 +11,8 @@ module CmAdmin
 
           filter [:title], :search, placeholder: 'Search'
 
+          scope_list [:only_beginner]
+
           column :title
           column :description
           column :created_at, field_type: :datetime, format: "%b %d, %Y %H:%M:%S"
@@ -29,26 +31,37 @@ module CmAdmin
             end
           end
           tab :chapters, 'chapters', associated_model: :chapters, layout_type: 'cm_association_index' do
+
+            scope_list [:advanced]
+
+            # sort_column :course_id
+            # sort_direction :desc
+
             column :title, header: 'Title'
             column :description, header: 'Description'
+            column :course_id, header: 'Course ID'
           end
           tab :coaches, 'course_coaches', associated_model: :course_coaches, layout_type: 'cm_association_index' do
             column :user_id, header: 'User'
           end
           tab :assessments, 'assessments', associated_model: :assessments, layout_type: 'cm_association_index' do
+            scope_list [:with_one]
             column :title, header: 'Title'
           end
-          
         end
 
         cm_new page_title: 'Add Course', page_description: 'Enter all details to add course' do
-          form_field :title, input_type: :string
-          form_field :description, input_type: :string
+          cm_section 'Add course details' do
+            form_field :title, input_type: :string
+            form_field :description, input_type: :string
+          end
         end
 
         cm_edit page_title: 'Edit Course', page_description: 'Enter all details to edit course' do
-          form_field :title, input_type: :string
-          form_field :description, input_type: :string
+          cm_section 'Edit course details' do
+            form_field :title, input_type: :string
+            form_field :description, input_type: :string
+          end
         end
       end
     end
