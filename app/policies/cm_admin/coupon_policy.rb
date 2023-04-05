@@ -20,5 +20,13 @@ class CmAdmin::CouponPolicy < ApplicationPolicy
   def destroy?
     index?
   end
+
+  def activate?
+    index?
+  end
+
+  def deactivate?
+    index?
+  end
   
 end

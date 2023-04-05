@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_16_100316) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_01_05_110512) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
@@ -20,8 +19,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
     t.string "message_checksum", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["message_id", "message_checksum"], name: "index_action_mailbox_inbound_emails_uniqueness", unique: true
   end
 
@@ -30,8 +29,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.text "body"
     t.string "record_type", null: false
     t.integer "record_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
@@ -42,8 +41,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "event_name", null: false
     t.integer "actor_id"
     t.jsonb "entity_changes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -51,7 +50,7 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -64,7 +63,7 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -99,8 +98,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "description"
     t.string "assessable_type", null: false
     t.bigint "assessable_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["assessable_type", "assessable_id"], name: "index_assessments_on_assessable"
   end
 
@@ -112,8 +111,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "itemable_type"
     t.bigint "itemable_id"
     t.uuid "uuid", default: -> { "uuid_generate_v4()" }, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
     t.index ["itemable_id", "itemable_type"], name: "index_cart_items_on_itemable_id_and_itemable_type"
     t.index ["itemable_type", "itemable_id"], name: "index_cart_items_on_itemable"
@@ -128,8 +127,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.bigint "user_id"
     t.uuid "uuid", default: -> { "uuid_generate_v4()" }, null: false
     t.integer "status", default: 0, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["coupon_id"], name: "index_carts_on_coupon_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
@@ -138,8 +137,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "title"
     t.string "description"
     t.bigint "course_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_chapters_on_course_id"
   end
 
@@ -147,8 +146,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "title"
     t.integer "discount_amount_cents"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "status", default: 0, null: false
     t.boolean "is_active", default: false
     t.index ["user_id"], name: "index_coupons_on_user_id"
@@ -157,8 +156,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
   create_table "course_coaches", force: :cascade do |t|
     t.bigint "course_id", null: false
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_coaches_on_course_id"
     t.index ["user_id"], name: "index_course_coaches_on_user_id"
   end
@@ -167,16 +166,16 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "share_link"
     t.integer "page_visit"
     t.bigint "course_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_details_on_course_id"
   end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "level", default: 0
     t.jsonb "meta_data"
     t.integer "price_cents"
@@ -186,8 +185,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.integer "educational_type"
     t.string "institution"
     t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "address_line1"
     t.string "address_line2"
     t.index ["user_id"], name: "index_educational_details_on_user_id"
@@ -198,10 +197,10 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "added_by_type", null: false
     t.bigint "added_by_id", null: false
     t.jsonb "error_report"
-    t.datetime "completed_at"
+    t.datetime "completed_at", precision: nil
     t.integer "status", default: 0
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["added_by_type", "added_by_id"], name: "index_file_imports_on_added_by"
   end
 
@@ -209,8 +208,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "title"
     t.string "description"
     t.bigint "chapter_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["chapter_id"], name: "index_lessons_on_chapter_id"
   end
 
@@ -226,8 +225,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "loggable_type", null: false
     t.bigint "loggable_id", null: false
     t.string "log_content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["loggable_type", "loggable_id"], name: "index_logs_on_loggable"
   end
 
@@ -255,23 +254,20 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
     t.string "name"
     t.integer "price_cents"
     t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.boolean "display_review"
-    t.integer "review_count"
-    t.string "product_type", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "transactions", force: :cascade do |t|
     t.integer "total_amount_cents", null: false
     t.integer "status", default: 0
-    t.datetime "completed_at"
+    t.datetime "completed_at", precision: nil
     t.string "rzp_order_id", null: false
     t.bigint "cart_id", null: false
     t.bigint "user_id", null: false
     t.string "mode_of_payment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_transactions_on_cart_id"
     t.index ["status"], name: "index_transactions_on_status"
     t.index ["user_id"], name: "index_transactions_on_user_id"
@@ -279,16 +275,16 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at", precision: nil
+    t.datetime "remember_created_at", precision: nil
     t.string "last_name"
     t.integer "age"
-    t.datetime "dob"
+    t.datetime "dob", precision: nil
     t.integer "gender"
     t.string "mobile_number"
     t.boolean "is_admin", default: false
@@ -299,8 +295,8 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
   create_table "zoom_registrations", force: :cascade do |t|
     t.string "registrant_name"
     t.integer "zoom_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -316,7 +312,6 @@ ActiveRecord::Schema.define(version: 2023_01_16_100316) do
   add_foreign_key "course_details", "courses"
   add_foreign_key "educational_details", "users"
   add_foreign_key "lessons", "chapters"
-  add_foreign_key "order_items", "products"
   add_foreign_key "otp_requests", "users"
   add_foreign_key "transactions", "carts"
   add_foreign_key "transactions", "users"

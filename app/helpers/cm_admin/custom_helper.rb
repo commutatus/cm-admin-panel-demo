@@ -5,6 +5,10 @@ module CmAdmin
       ::Course.only_beginner.map {|course| [course.title, course.id]}
     end
 
+    def course_level_map(field, record)
+      ::Course.levels.map {|key, value| [key, key.titleize]}
+    end
+
     def gender_collection
       ::User.genders.map {|gender| [gender[0].titleize, gender[0]]}
     end

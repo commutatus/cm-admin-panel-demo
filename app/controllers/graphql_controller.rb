@@ -5,12 +5,14 @@ class GraphqlController < ApplicationController
   protect_from_forgery with: :null_session
 
   def execute
+    set_current_user
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+    Current.user = @current_user
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: @current_user,
+      access_token: request.headers['Authorization']
     }
     result = MyappSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
@@ -20,6 +22,18 @@ class GraphqlController < ApplicationController
   end
 
   private
+
+  def set_current_user
+    # find token. Check if valid.
+    if request.headers['Authorization']
+      api_key = ApiKey.verify(request.headers['Authorization'])
+      return false unless api_key.present?
+      @current_user = api_key.user
+      @current_user
+    else
+      false
+    end
+  end
 
   # Handle variables in form data, JSON body, or a blank value
   def prepare_variables(variables_param)

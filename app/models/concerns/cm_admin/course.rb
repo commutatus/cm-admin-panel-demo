@@ -9,7 +9,7 @@ module CmAdmin
           page_title 'Course'
           page_description 'Manage all courses here'
 
-          filter [:title], :search, placeholder: 'Search'
+          filter [:title, {chapters: [:title]}], :search, placeholder: 'Search'
 
           scope_list [:only_beginner]
 
@@ -54,6 +54,16 @@ module CmAdmin
           cm_section 'Add course details' do
             form_field :title, input_type: :string
             form_field :description, input_type: :string
+            form_field :seo_keywords, input_type: :string
+            form_field :price, input_type: :integer
+            # form_field :level, input_type: :radio_button, helper_method: :course_level_map
+            nested_form_field :chapters do
+              form_field :title, input_type: :string
+              form_field :description, input_type: :string
+            end
+            nested_form_field :course_coaches do
+              form_field :user_id, input_type: :single_select, collection: ::User.all.order(:first_name).map { |user| [user.first_name, user.id] }
+            end
           end
         end
 
@@ -61,6 +71,15 @@ module CmAdmin
           cm_section 'Edit course details' do
             form_field :title, input_type: :string
             form_field :description, input_type: :string
+            form_field :seo_keywords, input_type: :string
+            form_field :price, input_type: :integer
+            nested_form_field :chapters do
+              form_field :title, input_type: :string
+              form_field :description, input_type: :string
+            end
+            nested_form_field :course_coaches do
+              form_field :user_id, input_type: :single_select, collection: ::User.all.order(:first_name).map { |user| [user.first_name, user.id] }
+            end
           end
         end
       end
