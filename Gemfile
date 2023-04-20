@@ -16,18 +16,19 @@ gem 'simple_form', '~> 5.1.0'
 # Gems required for keeping code clean.
 gem 'rubocop', '~> 1.30.1'
 gem 'reek', '~> 6.1.1'
-gem 'eslint-rails', '~> 1.3.0'
+# gem 'eslint-rails', '~> 1.3.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-rails', '~> 4.7.0.8'
 gem "cocoon", '~> 1.2.15'
-# gem 'cm-admin', '~> 0.7.6'
-gem 'cm-admin', path: '../cm-admin'
+gem 'cm-admin', '~> 1.0.3'
+#gem 'cm-admin', path: '../cm-admin'
 gem 'cm-graphql', path: '../template-paging-api'
 gem 'cm-cart', path: '../cm-cart'
 gem 'cm-pay', path: '../cm-pay'
 gem 'cm-action-trail', path: '../cm-action-trail'
 gem 'devise', '~> 4.8.1'
 gem 'sidekiq', '~> 6.0.7'
+gem "importmap-rails"
 
 
 group :development, :test do
