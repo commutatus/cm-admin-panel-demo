@@ -3,5 +3,5 @@ class OrderItem < ApplicationRecord
 
   belongs_to :product
 
-  monetize :product_price_cents
+  # monetize :product_price_cents
 end

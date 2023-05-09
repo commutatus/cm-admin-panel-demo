@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
   include CmAdmin::Product
 
-  monetize :price_cents
+  # monetize :price_cents
 end

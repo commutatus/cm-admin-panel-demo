@@ -4,7 +4,7 @@ Rails.application.reloader.to_prepare do
     config.layout = 'admin'
     config.included_models = [
       Location, Address, User, ZoomRegistration, Course, Chapter, Lesson, CourseCoach,
-      Assessment, Coupon, Log, Product, OrderItem, FileImport, Transaction, Cart
+      Assessment, Coupon, Log, Product, OrderItem, FileImport
     ]
   end
 end

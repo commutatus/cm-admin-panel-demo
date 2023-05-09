@@ -21,11 +21,15 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-rails', '~> 4.7.0.8'
 gem "cocoon", '~> 1.2.15'
 gem 'cm-admin', '~> 1.0.3'
+gem 'cm-graphql'
+gem 'cm-action-trail'
+
+
 #gem 'cm-admin', path: '../cm-admin'
-gem 'cm-graphql', path: '../template-paging-api'
-gem 'cm-cart', path: '../cm-cart'
-gem 'cm-pay', path: '../cm-pay'
-gem 'cm-action-trail', path: '../cm-action-trail'
+#gem 'cm-graphql', path: '../template-paging-api'
+#gem 'cm-cart', path: '../cm-cart'
+#gem 'cm-pay', path: '../cm-pay'
+#gem 'cm-action-trail', path: '../cm-action-trail'
 gem 'devise', '~> 4.8.1'
 gem 'sidekiq', '~> 6.0.7'
 gem "importmap-rails"
@@ -50,3 +54,5 @@ group :test do
   gem 'selenium-webdriver', '~> 4.1.0'
   gem 'webdrivers', '~> 5.0.0'
 end
+
+gem "dockerfile-rails", ">= 1.2", :group => :development

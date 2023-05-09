@@ -9,7 +9,7 @@ class Course < ApplicationRecord
   has_many :assessments, as: :assessable
   has_one :course_detail
 
-  monetize :price_cents
+  # monetize :price_cents
 
   store_accessor :meta_data, :seo_keywords
 
